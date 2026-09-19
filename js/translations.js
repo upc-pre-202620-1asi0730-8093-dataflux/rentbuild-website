@@ -97,6 +97,39 @@ const translations = {
                 }
             ]
 
+        },
+        features: {
+
+            title:
+                "Features to better manage your equipment",
+
+            body:
+                "The essential tools to control the rental and operating cycle of each machine.",
+
+            items: [
+                {
+                    title:
+                        "Equipment management",
+
+                    body:
+                        "Register, check, and monitor the status and availability of your machinery."
+                },
+                {
+                    title:
+                        "Reservations and rentals",
+
+                    body:
+                        "Manage reservations, contracts, deliveries, and returns within a single workflow."
+                },
+                {
+                    title:
+                        "Operational reports",
+
+                    body:
+                        "Check information regarding rentals, usage, revenue, and maintenance."
+                }
+            ]
+
         }
 
     },
@@ -195,6 +228,40 @@ const translations = {
                     title: "Mantenimiento",
                     body:
                         "Registra inspecciones, incidentes, reparaciones y mantenimiento."
+                }
+            ],
+
+
+        },
+        features: {
+
+            title:
+                "Funciones para gestionar mejor tus equipos",
+
+            body:
+                "Las herramientas esenciales para controlar el ciclo de alquiler y operación de cada máquina.",
+
+            items: [
+                {
+                    title:
+                        "Gestión de equipos",
+
+                    body:
+                        "Registra, consulta y monitorea el estado y la disponibilidad de tu maquinaria."
+                },
+                {
+                    title:
+                        "Reservas y alquileres",
+
+                    body:
+                        "Gestiona reservas, contratos, entregas y devoluciones en un solo flujo de trabajo."
+                },
+                {
+                    title:
+                        "Reportes operativos",
+
+                    body:
+                        "Consulta información sobre alquileres, uso, ingresos y mantenimiento."
                 }
             ]
 

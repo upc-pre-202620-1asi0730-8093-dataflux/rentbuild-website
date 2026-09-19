@@ -50,6 +50,24 @@
         font-size: 16px;
         line-height: 1.65;
     }
+    .features__header {
+        grid-template-columns: 1fr 1.3fr;
+
+        gap: 35px;
+    }
+
+    .features__grid {
+        gap: 28px;
+    }
+
+    .feature-card h3 {
+        font-size: 21px;
+    }
+
+    .feature-card p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
 }
 
 
@@ -275,6 +293,34 @@
     .operation__ratings > div > span {
         font-size: 15px;
     }
+    .features__header {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 28px;
+    }
+
+    .features__header h2 {
+        max-width: 410px;
+    }
+
+    .features__header .section-copy {
+        max-width: 450px;
+    }
+
+    .features__grid {
+        gap: 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+    }
+
+    .feature-card p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
 
 
 }
@@ -304,5 +350,26 @@
 
     .hero h1 {
         font-size: 43px;
+    }
+    .features__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .feature-card__illustration {
+        max-width: 300px;
+
+        margin-inline: auto;
+    }
+
+    .feature-card h3 {
+        margin-top: 20px;
+
+        font-size: 23px;
+    }
+
+    .feature-card p {
+        font-size: 14px;
     }
 }

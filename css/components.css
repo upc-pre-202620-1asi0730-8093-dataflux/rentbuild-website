@@ -507,6 +507,117 @@
     line-height: 30px;
 }
 /* ========================================
+   FEATURES
+   ======================================== */
+
+.features {
+    padding-top: 130px;
+    padding-bottom: 105px;
+
+    background: transparent;
+}
+
+.features__header {
+    display: grid;
+    grid-template-columns: 395px 1fr;
+
+    gap: 49px;
+
+    margin-bottom: 22px;
+}
+
+.features__header h2 {
+    max-width: 395px;
+
+    font-weight: 600;
+}
+
+.features__header .section-copy {
+    max-width: 461px;
+
+    margin-top: 14px;
+}
+
+
+/* Features grid */
+
+.features__grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 42px;
+}
+
+
+/* Feature card */
+
+.feature-card__illustration {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 316 / 374;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+}
+
+.feature-card__illustration img {
+    position: absolute;
+
+    top: 0;
+
+    width: 324.05%;
+    max-width: none;
+
+    height: auto;
+}
+
+
+/* First panel */
+
+.feature-card__illustration--equipment img {
+    left: 0;
+}
+
+
+/* Second panel */
+
+.feature-card__illustration--rentals img {
+    left: -112.03%;
+}
+
+
+/* Third panel */
+
+.feature-card__illustration--reports img {
+    left: -224.05%;
+}
+
+
+.feature-card h3 {
+    margin-top: 23px;
+
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.25;
+
+    letter-spacing: 0;
+}
+
+.feature-card p {
+    margin-top: 20px;
+
+    color: var(--color-muted);
+
+    font-size: 18px;
+    line-height: 30px;
+}
+/* ========================================
    RENTAL CYCLE
    ======================================== */
 
