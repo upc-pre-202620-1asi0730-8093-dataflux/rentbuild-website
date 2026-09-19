@@ -75,6 +75,9 @@
     .video-frame {
         border-width: 10px;
     }
+    .about__grid {
+        gap: 35px;
+    }
 }
 
 
@@ -390,6 +393,40 @@
                 0
                 18px
                 18px;
+    }
+    .about {
+        padding-block: 58px;
+    }
+
+    .about .container {
+        width: calc(100% - 40px);
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .about h2 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .about__intro {
+        font-size: 18px;
+        line-height: 1.55;
+    }
+
+    .about__list {
+        padding-left: 20px;
+
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .about .video-frame {
+        margin-top: 0;
     }
 
 

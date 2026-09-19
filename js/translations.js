@@ -197,6 +197,45 @@ const translations = {
         video: {
             soon:
                 "Video coming soon"
+        },
+        about: {
+
+            title:
+                "Simplifying Equipment Rental\nand Management",
+
+            body:
+                "RentBuild was created to simplify and centralize equipment rental operations. The platform helps businesses manage equipment availability, reservations, rentals, deliveries, returns, incidents, and maintenance from one place. By connecting each stage of the rental process, RentBuild provides greater control, visibility, and organization throughout the equipment lifecycle.",
+
+            video:
+                "Meet RentBuild",
+
+            videoAria:
+                "Meet RentBuild. Video coming soon.",
+
+            items: [
+                {
+                    title:
+                        "Equipment Management:",
+
+                    body:
+                        "Register, organize, and monitor the status, location, and availability of each piece of equipment."
+                },
+                {
+                    title:
+                        "Rental Lifecycle Tracking:",
+
+                    body:
+                        "Manage reservations, rentals, deliveries, returns, inspections, and maintenance in a connected workflow."
+                },
+                {
+                    title:
+                        "Maintenance Control:",
+
+                    body:
+                        "Track incidents, inspections, repairs, and maintenance activities to keep equipment ready for future rentals."
+                }
+            ]
+
         }
 
     },
@@ -399,6 +438,45 @@ const translations = {
         video: {
             soon:
                 "Video próximamente"
+        },
+        about: {
+
+            title:
+                "Simplificando el alquiler\ny la gestión de equipos",
+
+            body:
+                "RentBuild nació para simplificar y centralizar las operaciones de alquiler de equipos. La plataforma ayuda a las empresas a gestionar disponibilidad, reservas, alquileres, entregas, devoluciones, incidentes y mantenimiento desde un solo lugar. Al conectar cada etapa del proceso de alquiler, RentBuild ofrece mayor control, visibilidad y organización durante todo el ciclo de vida del equipo.",
+
+            video:
+                "Conoce RentBuild",
+
+            videoAria:
+                "Conoce RentBuild. Video próximamente.",
+
+            items: [
+                {
+                    title:
+                        "Gestión de equipos:",
+
+                    body:
+                        "Registra, organiza y monitorea el estado, la ubicación y la disponibilidad de cada equipo."
+                },
+                {
+                    title:
+                        "Seguimiento del ciclo de alquiler:",
+
+                    body:
+                        "Gestiona reservas, alquileres, entregas, devoluciones, inspecciones y mantenimiento en un flujo conectado."
+                },
+                {
+                    title:
+                        "Control de mantenimiento:",
+
+                    body:
+                        "Registra incidentes, inspecciones, reparaciones y actividades de mantenimiento para preparar los equipos para futuros alquileres."
+                }
+            ]
+
         }
 
     }

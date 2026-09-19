@@ -934,6 +934,98 @@
     font-size: 16px;
     line-height: 1.65;
 }
+/* ========================================
+   ABOUT RENTBUILD
+   ======================================== */
+
+.about {
+    padding-top: 180px;
+    padding-bottom: 125px;
+
+    font-family: var(--font-family-editorial);
+
+    background: transparent;
+}
+
+.about .container {
+    width: min(
+            1298px,
+            calc(100% - 80px)
+    );
+}
+
+
+/* Heading */
+
+.about h2 {
+    max-width: 751px;
+
+    margin-bottom: 36px;
+
+    color: #111111;
+
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 43px;
+
+    letter-spacing: 0;
+
+    white-space: pre-line;
+}
+
+.about h2 > span:first-child {
+    color: var(--color-primary);
+}
+
+
+/* Content */
+
+.about__grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1.05fr;
+
+    align-items: start;
+
+    gap: 72px;
+}
+
+.about__intro {
+    color: #676767;
+
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+.about__list {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 35px;
+    padding-left: 40px;
+
+    color: #676767;
+
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.about__list strong {
+    font-weight: 500;
+}
+
+
+/* About video */
+
+.about .video-frame {
+    aspect-ratio: 1.98;
+
+    margin-top: -15px;
+
+    border: none;
+    border-radius: 0;
+}
 
 /* First panel */
 
