@@ -1,17 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="theme-color" content="#1e3a5f" />
-    <meta name="description" content="RentBuild connects equipment, reservations, rentals, deliveries, returns, and maintenance in one platform. Built by DataFlux." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700&family=Rubik:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
     <title>RentBuild — Equipment rental, under control</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+    <!-- SEO -->
+    <meta
+            name="description"
+            content="RentBuild connects equipment, reservations, rentals, deliveries, returns, and maintenance in one platform. Built by DataFlux."
+    >
+
+    <meta
+            name="keywords"
+            content="equipment rental, construction machinery, machinery management, rental management software, equipment availability, maintenance management, RentBuild"
+    >
+
+    <meta
+            name="author"
+            content="DataFlux"
+    >
+
+    <!-- Browser theme -->
+    <meta
+            name="theme-color"
+            content="#1E3A5F"
+    >
+
+    <!-- Google Fonts -->
+    <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+    >
+
+    <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+    >
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600&family=Rubik:wght@700;800&display=swap"
+            rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link
+            rel="stylesheet"
+            href="css/styles.css"
+    >
+</head>
+
+<body class="landing-page">
+
+<!-- Accessibility -->
+<a
+        class="skip-link"
+        href="#main-content"
+        data-i18n="nav.skip"
+>
+    Skip to content
+</a>
+
+<!-- ========================================
+     HEADER
+     ======================================== -->
+<header
+        id="site-header"
+        class="site-header"
+>
+    <nav
+            class="navbar container"
+            aria-label="Main navigation"
+            data-i18n-aria-label="nav.label"
+    >
+
+        <!-- Brand -->
+        <a
+                href="#home"
+                class="navbar__brand"
+                aria-label="RentBuild"
+        >
+            <span class="brand">
+
+                <img
+                        class="brand__mark"
+                        src="assets/images/logo-dark.png"
+                        alt=""
+                        width="83"
+                        height="83"
+                        aria-hidden="true"
+                        draggable="false"
+                >
+
+                <span
+                        class="brand__word"
+                        aria-hidden="true"
+                >
+                    entBuild
+                </span>
+
+            </span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+                id="menu-button"
+                class="navbar__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+                aria-label="Toggle navigation menu"
+                data-i18n-aria-label="nav.menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <div
+                id="main-navigation"
+                class="navbar__panel"
+        >
+
+            <ul class="navbar__links">
+
+                <li>
+                    <a
+                            href="#how-it-works"
+                            data-section-link
+                            data-i18n="nav.how"
+                    >
+                        How it works
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="#features"
+                            data-section-link
+                            data-i18n="nav.features"
+                    >
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="#pricing"
+                            data-section-link
+                            data-i18n="nav.plans"
+                    >
+                        Plans
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="#our-team"
+                            data-section-link
+                            data-i18n="nav.team"
+                    >
+                        Our Team
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="#contact"
+                            data-section-link
+                            data-i18n="nav.contact"
+                    >
+                        Contact us
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Language -->
+            <div class="navbar__actions">
+
+                <button
+                        id="language-switch"
+                        class="language-switch"
+                        type="button"
+                        aria-label="Change language to Spanish"
+                        data-i18n-aria-label="nav.language"
+                >
+                    <span
+                            class="language-switch__label is-active"
+                            data-language="en"
+                    >
+                        EN
+                    </span>
+
+                    <span
+                            class="language-switch__track"
+                            aria-hidden="true"
+                    >
+                        <span></span>
+                    </span>
+
+                    <span
+                            class="language-switch__label"
+                            data-language="es"
+                    >
+                        ES
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+</header>
+
+<!-- ========================================
+     MAIN CONTENT
+     ======================================== -->
+<main id="main-content">
+
+    <!-- Hero -->
+    <section
+            id="home"
+            class="hero"
+    >
+        <!-- Hero content will be migrated here -->
+    </section>
+
+    <!-- How it works -->
+    <section
+            id="how-it-works"
+            class="operation"
+    >
+        <!-- Operation overview will be migrated here -->
+    </section>
+
+    <!-- Features -->
+    <section
+            id="features"
+            class="features"
+    >
+        <!-- Features content will be migrated here -->
+    </section>
+
+    <!-- Benefits -->
+    <section
+            id="benefits"
+            class="benefits"
+    >
+        <!-- Benefits content will be migrated here -->
+    </section>
+
+    <!-- Product showcase -->
+    <section
+            id="product-showcase"
+            class="showcase"
+    >
+        <!-- Product showcase will be migrated here -->
+    </section>
+
+    <!-- Our Team -->
+    <section
+            id="our-team"
+            class="team"
+    >
+        <!--
+
+        -->
+    </section>
+
+    <!-- About RentBuild -->
+    <section
+            id="about"
+            class="about"
+    >
+        <!-- About RentBuild content will be migrated here -->
+    </section>
+
+    <!-- Pricing -->
+    <section
+            id="pricing"
+            class="pricing"
+    >
+        <!-- Pricing plans will be migrated here -->
+    </section>
+
+    <!-- Contact -->
+    <section
+            id="contact"
+            class="contact"
+    >
+        <!-- Contact form will be migrated here -->
+    </section>
+
+</main>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer
+        id="site-footer"
+        class="site-footer"
+>
+    <!-- Footer content will be migrated here -->
+</footer>
+
+<!-- JavaScript -->
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
 </html>

@@ -1,0 +1,159 @@
+/* ========================================
+   HEADER
+   ======================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+
+    background: rgb(196 209 230 / 92%);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    min-height: 136px;
+}
+
+/* Brand */
+
+.navbar__brand {
+    flex-shrink: 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand__mark {
+    width: 83px;
+    height: auto;
+
+    object-fit: contain;
+
+    mix-blend-mode: multiply;
+}
+
+.brand__word {
+    margin-left: 7px;
+
+    color: var(--color-primary);
+
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1;
+
+    letter-spacing: 0;
+}
+
+/* Navigation */
+
+.navbar__panel {
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.navbar__links a {
+    display: inline-block;
+
+    padding-block: 12px;
+
+    color: #656f7c;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition:
+            color 0.2s ease,
+            background-color 0.2s ease;
+}
+
+.navbar__links a:hover,
+.navbar__links a[aria-current="location"] {
+    color: var(--color-navy);
+}
+
+/* Header actions */
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+/* Language selector */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 12px 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #626c77;
+
+    font-family: var(--font-family-language);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.language-switch__label.is-active {
+    color: #0c1828;
+}
+
+.language-switch__track {
+    width: 34px;
+    height: 18px;
+
+    padding: 3px;
+
+    border-radius: 20px;
+
+    background: #fffbe7;
+}
+
+.language-switch__track > span {
+    display: block;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #132231;
+
+    transition: transform 0.2s ease;
+}
+
+.language-switch__track.is-spanish > span {
+    transform: translateX(16px);
+}
+
+/* Mobile navigation button */
+
+.navbar__toggle {
+    display: none;
+}
