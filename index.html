@@ -228,12 +228,234 @@
      ======================================== -->
 <main id="main-content">
 
-    <!-- Hero -->
     <section
             id="home"
             class="hero"
+            aria-labelledby="hero-title"
     >
-        <!-- Hero content will be migrated here -->
+        <div class="container hero__grid">
+
+            <!-- Hero copy -->
+            <div class="hero__copy">
+
+                <h1
+                        id="hero-title"
+                        data-i18n="hero.title"
+                >
+                    Manage your machinery with total control.
+                </h1>
+
+                <p data-i18n="hero.body">
+                    Manage equipment, reservations, rentals, deliveries,
+                    returns, and maintenance from a single platform.
+                </p>
+
+                <a
+                        class="btn"
+                        href="#contact"
+                        data-i18n="hero.cta"
+                >
+                    Request demo
+                </a>
+
+            </div>
+
+            <!-- Hero visual -->
+            <div
+                    class="hero__visual"
+                    aria-hidden="true"
+            >
+                <div class="hero-art">
+
+                    <!-- Cropped reference image -->
+                    <span class="reference-artwork hero-art__photo">
+
+                    <img
+                            src="assets/images/references/hero-reference.png"
+                            alt=""
+                            loading="eager"
+                            decoding="async"
+                            draggable="false"
+                    >
+
+                </span>
+
+                    <!-- Equipment floating card -->
+                    <div class="hero-art__equipment floating-card">
+
+                        <div>
+
+                        <span
+                                class="art-label"
+                                data-i18n="art.equipment"
+                        >
+                            Equipment
+                        </span>
+
+                            <strong data-i18n="art.excavator">
+                                Excavator 01
+                            </strong>
+
+                        </div>
+
+                        <span
+                                class="art-reserve"
+                                data-i18n="art.reserve"
+                        >
+                        Reserve
+                    </span>
+
+                    </div>
+
+                    <!-- Decorative status icons -->
+                    <span class="hero-art__check">
+                    ✓
+                </span>
+
+                    <span class="hero-art__document">
+                    ▤
+                </span>
+
+                    <!-- Availability -->
+                    <div class="hero-art__availability floating-card">
+
+                    <span
+                            class="art-label"
+                            data-i18n="art.available"
+                    >
+                        Available
+                    </span>
+
+                        <strong>
+                        <span data-i18n="art.equipmentCount">
+                            24 units
+                        </span>
+
+                            <span class="art-bars">
+                            ▁▃▆
+                        </span>
+                        </strong>
+
+                    </div>
+
+                    <!-- Status card -->
+                    <div class="hero-art__status">
+
+                        <div class="art-circles">
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <span data-i18n="art.status">
+                        Status
+                    </span>
+
+                        <strong>
+                            ···· &nbsp;
+                            <span data-i18n="art.active">
+                            Active
+                        </span>
+                        </strong>
+
+                        <div class="art-status-bottom">
+
+                            <i></i>
+
+                            <span data-i18n="art.today">
+                            Today
+                        </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="hero-art__message">
+                    ▱
+                </span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Rental cycle -->
+        <div class="container rental-cycle">
+
+            <h2 data-i18n="hero.cycleTitle">
+                The entire rental cycle, connected
+            </h2>
+
+            <ul>
+
+                <li>
+                <span
+                        class="cycle-icon"
+                        aria-hidden="true"
+                >
+                    ▦
+                </span>
+
+                    <span data-i18n="hero.cycle.0">
+                    Equipment
+                </span>
+                </li>
+
+                <li>
+                <span
+                        class="cycle-icon"
+                        aria-hidden="true"
+                >
+                    ▣
+                </span>
+
+                    <span data-i18n="hero.cycle.1">
+                    Reservations
+                </span>
+                </li>
+
+                <li>
+                <span
+                        class="cycle-icon"
+                        aria-hidden="true"
+                >
+                    ▤
+                </span>
+
+                    <span data-i18n="hero.cycle.2">
+                    Rentals
+                </span>
+                </li>
+
+                <li>
+                <span
+                        class="cycle-icon"
+                        aria-hidden="true"
+                >
+                    ⚒
+                </span>
+
+                    <span data-i18n="hero.cycle.3">
+                    Maintenance
+                </span>
+                </li>
+
+                <li>
+                <span
+                        class="cycle-icon"
+                        aria-hidden="true"
+                >
+                    ◉
+                </span>
+
+                    <span data-i18n="hero.cycle.4">
+                    Reports
+                </span>
+                </li>
+
+            </ul>
+
+        </div>
+
     </section>
 
     <!-- How it works -->

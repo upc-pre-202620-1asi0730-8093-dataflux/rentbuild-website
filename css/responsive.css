@@ -31,6 +31,9 @@
     .language-switch {
         font-size: 12px;
     }
+    .rental-cycle li {
+        font-size: 19px;
+    }
 }
 
 
@@ -114,6 +117,125 @@
 
         padding: 10px;
     }
+    .hero {
+        padding-top: 44px;
+    }
+
+    .hero__grid {
+        gap: 22px;
+    }
+
+    .hero h1 {
+        font-size:
+                clamp(
+                        38px,
+                        5.5vw,
+                        54px
+                );
+    }
+
+    .hero__copy p {
+        font-size: 14px;
+    }
+
+    .hero__visual {
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .rental-cycle {
+        padding-block: 85px 55px;
+    }
+
+    .rental-cycle li {
+        gap: 5px;
+
+        font-size: 16px;
+    }
+
+    .rental-cycle .cycle-icon {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .hero__copy {
+        max-width: 540px;
+    }
+
+    .hero h1 {
+        max-width: 490px;
+
+        font-size:
+                clamp(
+                        42px,
+                        8vw,
+                        56px
+                );
+    }
+
+    .hero__copy p {
+        max-width: 470px;
+
+        line-height: 1.7;
+    }
+
+    .hero__visual {
+        max-width: 500px;
+
+        margin: 0 auto;
+    }
+
+    .rental-cycle {
+        padding-block: 60px 46px;
+    }
+
+    .rental-cycle h2 {
+        max-width: 400px;
+
+        margin-inline: auto;
+
+        font-size: 25px;
+    }
+
+    .rental-cycle ul {
+        justify-content: center;
+
+        gap: 16px 25px;
+
+        margin-top: 28px;
+    }
+
+    .hero-art__equipment {
+        border-radius: 7px;
+    }
+
+    .art-reserve {
+        padding: 4px 6px;
+    }
+
+    .art-label {
+        margin-bottom: 2px;
+    }
+
+    .art-circles i {
+        width: 14px;
+        height: 14px;
+    }
+
+    .art-status-bottom i {
+        width: 17px;
+        height: 11px;
+    }
+
+
 }
 
 
@@ -134,5 +256,12 @@
     .navbar__panel {
         left: 20px;
         right: 20px;
+    }
+    .hero {
+        padding-top: 30px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
     }
 }
