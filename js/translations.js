@@ -59,6 +59,44 @@ const translations = {
 
             today:
                 "Today"
+        },
+        operation: {
+
+            title:
+                "Control every stage of your operation.",
+
+            body:
+                "RentBuild centralizes information about your equipment, allowing you to track its status, availability, and activity from a single location.",
+
+            ratings: [
+                {
+                    title: "Total control",
+                    label: "Inventory"
+                },
+                {
+                    title: "Fewer errors",
+                    label: "Operation"
+                }
+            ],
+
+            items: [
+                {
+                    title: "Availability",
+                    body:
+                        "Check which pieces of equipment are available, reserved, rented, or undergoing maintenance."
+                },
+                {
+                    title: "Reservations",
+                    body:
+                        "Organize periods and avoid availability conflicts between rentals."
+                },
+                {
+                    title: "Maintenance",
+                    body:
+                        "Record inspections, incidents, repairs, and maintenance."
+                }
+            ]
+
         }
 
     },
@@ -122,6 +160,44 @@ const translations = {
 
             today:
                 "Hoy"
+        },
+        operation: {
+
+            title:
+                "Controla cada etapa de tu operación.",
+
+            body:
+                "RentBuild centraliza la información de tus equipos para que puedas consultar su estado, disponibilidad y actividad desde un solo lugar.",
+
+            ratings: [
+                {
+                    title: "Control total",
+                    label: "Inventario"
+                },
+                {
+                    title: "Menos errores",
+                    label: "Operación"
+                }
+            ],
+
+            items: [
+                {
+                    title: "Disponibilidad",
+                    body:
+                        "Consulta qué equipos están disponibles, reservados, alquilados o en mantenimiento."
+                },
+                {
+                    title: "Reservas",
+                    body:
+                        "Organiza los períodos y evita conflictos de disponibilidad entre alquileres."
+                },
+                {
+                    title: "Mantenimiento",
+                    body:
+                        "Registra inspecciones, incidentes, reparaciones y mantenimiento."
+                }
+            ]
+
         }
 
     }

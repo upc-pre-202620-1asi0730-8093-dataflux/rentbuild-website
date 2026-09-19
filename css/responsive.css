@@ -34,6 +34,22 @@
     .rental-cycle li {
         font-size: 19px;
     }
+    .operation__grid {
+        gap: 35px;
+    }
+
+    .operation__ratings {
+        gap: 36px;
+    }
+
+    .operation__items h3 {
+        font-size: 20px;
+    }
+
+    .operation__items p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
 }
 
 
@@ -233,6 +249,31 @@
     .art-status-bottom i {
         width: 17px;
         height: 11px;
+    }
+    .operation__grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .operation__ratings {
+        margin-top: 32px;
+    }
+
+    .operation__items {
+        gap: 26px;
+    }
+
+    .operation__icon {
+        width: 47px;
+        height: 47px;
+
+        flex-basis: 47px;
+    }
+
+    .operation__ratings strong,
+    .operation__ratings > div > span {
+        font-size: 15px;
     }
 
 
