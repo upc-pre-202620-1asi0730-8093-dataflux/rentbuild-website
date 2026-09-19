@@ -848,12 +848,213 @@
         </div>
     </section>
 
-    <!-- Product showcase -->
     <section
             id="product-showcase"
-            class="showcase"
+            class="showcase section"
+            aria-labelledby="showcase-title"
     >
-        <!-- Product showcase will be migrated here -->
+        <div class="container">
+
+            <h2
+                    id="showcase-title"
+                    class="section-heading"
+                    data-i18n="showcase.title"
+            >
+                RentBuild functions.
+                Real control, every day.
+            </h2>
+
+
+            <div class="showcase__grid">
+
+                <!-- Product demo -->
+                <div class="video-frame">
+
+                    <!--
+                        TODO:
+                        Replace this placeholder with
+                        assets/videos/product-demo.mp4
+                        when the video is available.
+                    -->
+                    <div
+                            class="video-placeholder"
+                            role="img"
+                            aria-label="See RentBuild in action. Video coming soon."
+                            data-i18n-aria-label="showcase.videoAria"
+                    >
+
+                        <div
+                                class="vp-play-btn"
+                                aria-hidden="true"
+                        >
+                            <svg
+                                    viewBox="0 0 68 48"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                        width="68"
+                                        height="48"
+                                        rx="12"
+                                        fill="#FF0000"
+                                />
+
+                                <polygon
+                                        points="27,14 27,34 47,24"
+                                        fill="#FFFFFF"
+                                />
+                            </svg>
+                        </div>
+
+                        <span
+                                class="vp-status"
+                                data-i18n="video.soon"
+                        >
+                        Video coming soon
+                    </span>
+
+                        <div
+                                class="vp-progress"
+                                aria-hidden="true"
+                        >
+                            <span class="vp-progress__bar"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Accordion -->
+                <div class="showcase__accordion">
+
+                    <article class="showcase__item">
+
+                        <h3>
+                            <button
+                                    id="showcase-trigger-1"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="showcase-panel-1"
+                                    data-accordion-trigger
+                            >
+                            <span data-i18n="showcase.items.0.title">
+                                Equipment Management
+                            </span>
+                            </button>
+                        </h3>
+
+                        <div
+                                id="showcase-panel-1"
+                                role="region"
+                                aria-labelledby="showcase-trigger-1"
+                                hidden
+                        >
+                            <p data-i18n="showcase.items.0.body">
+                                Register your machinery and keep its location,
+                                availability, and condition organized in one place.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="showcase__item">
+
+                        <h3>
+                            <button
+                                    id="showcase-trigger-2"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="showcase-panel-2"
+                                    data-accordion-trigger
+                            >
+                            <span data-i18n="showcase.items.1.title">
+                                Reservations & Rentals
+                            </span>
+                            </button>
+                        </h3>
+
+                        <div
+                                id="showcase-panel-2"
+                                role="region"
+                                aria-labelledby="showcase-trigger-2"
+                                hidden
+                        >
+                            <p data-i18n="showcase.items.1.body">
+                                Keep bookings, contracts, deliveries, and returns
+                                connected throughout the rental cycle.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="showcase__item">
+
+                        <h3>
+                            <button
+                                    id="showcase-trigger-3"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="showcase-panel-3"
+                                    data-accordion-trigger
+                            >
+                            <span data-i18n="showcase.items.2.title">
+                                Maintenance & Incidents
+                            </span>
+                            </button>
+                        </h3>
+
+                        <div
+                                id="showcase-panel-3"
+                                role="region"
+                                aria-labelledby="showcase-trigger-3"
+                                hidden
+                        >
+                            <p data-i18n="showcase.items.2.body">
+                                Track inspections, repairs, and incidents to keep
+                                equipment ready for its next rental.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="showcase__item">
+
+                        <h3>
+                            <button
+                                    id="showcase-trigger-4"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="showcase-panel-4"
+                                    data-accordion-trigger
+                            >
+                            <span data-i18n="showcase.items.3.title">
+                                Operational Reports
+                            </span>
+                            </button>
+                        </h3>
+
+                        <div
+                                id="showcase-panel-4"
+                                role="region"
+                                aria-labelledby="showcase-trigger-4"
+                                hidden
+                        >
+                            <p data-i18n="showcase.items.3.body">
+                                Review equipment usage, rental activity, revenue,
+                                and maintenance history to support your decisions.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
     </section>
 
     <!-- Our Team -->

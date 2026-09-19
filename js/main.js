@@ -404,3 +404,132 @@ if (languageButton) {
     );
 
 }
+
+/* ========================================
+   PRODUCT SHOWCASE ACCORDION
+   ======================================== */
+
+const accordionTriggers =
+    document.querySelectorAll(
+        "[data-accordion-trigger]"
+    );
+
+
+function closeAccordionItem(trigger) {
+
+    const panelId =
+        trigger.getAttribute(
+            "aria-controls"
+        );
+
+    const panel =
+        document.getElementById(
+            panelId
+        );
+
+    const item =
+        trigger.closest(
+            ".showcase__item"
+        );
+
+
+    trigger.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+    if (panel) {
+        panel.hidden = true;
+    }
+
+
+    item?.classList.remove(
+        "is-active"
+    );
+
+}
+
+
+function openAccordionItem(trigger) {
+
+    const panelId =
+        trigger.getAttribute(
+            "aria-controls"
+        );
+
+    const panel =
+        document.getElementById(
+            panelId
+        );
+
+    const item =
+        trigger.closest(
+            ".showcase__item"
+        );
+
+
+    trigger.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+
+    if (panel) {
+        panel.hidden = false;
+    }
+
+
+    item?.classList.add(
+        "is-active"
+    );
+
+}
+
+
+accordionTriggers.forEach(trigger => {
+
+    trigger.addEventListener(
+        "click",
+        () => {
+
+            const isOpen =
+                trigger.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            /*
+                Vue used a single `active`
+                value, so only one item
+                can remain open.
+            */
+
+            accordionTriggers.forEach(
+                otherTrigger => {
+
+                    closeAccordionItem(
+                        otherTrigger
+                    );
+
+                }
+            );
+
+
+            /*
+                Clicking an already-open
+                item closes it.
+            */
+
+            if (!isOpen) {
+
+                openAccordionItem(
+                    trigger
+                );
+
+            }
+
+        }
+    );
+
+});

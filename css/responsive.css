@@ -68,6 +68,13 @@
         font-size: 16px;
         line-height: 1.65;
     }
+    .showcase__grid {
+        gap: 35px;
+    }
+
+    .video-frame {
+        border-width: 10px;
+    }
 }
 
 
@@ -339,6 +346,51 @@
         font-size: 16px;
         line-height: 1.7;
     }
+    .showcase {
+        padding-block: 58px;
+    }
+
+    .showcase .container {
+        width: calc(100% - 40px);
+    }
+
+    .showcase .section-heading {
+        margin-bottom: 36px;
+    }
+
+    .showcase__grid {
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+    }
+
+    .video-frame {
+        max-width: 550px;
+
+        margin-inline: auto;
+
+        border-width: 16px;
+        border-radius: 18px;
+    }
+
+    .showcase__accordion {
+        gap: 16px;
+    }
+
+    .showcase__item h3 {
+        font-size: 22px;
+    }
+
+    .showcase__item button {
+        padding: 18px;
+    }
+
+    .showcase__item p {
+        padding:
+                0
+                18px
+                18px;
+    }
 
 
 }
@@ -398,5 +450,8 @@
         width: 55%;
 
         font-size: 11px;
+    }
+    .showcase__item h3 {
+        font-size: 20px;
     }
 }

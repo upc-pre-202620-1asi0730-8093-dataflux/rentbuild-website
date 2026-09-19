@@ -149,6 +149,54 @@ const translations = {
             art:
                 "A workstation with equipment service, rental, and return status cards."
 
+        },
+        showcase: {
+
+            title:
+                "RentBuild functions.\nReal control, every day.",
+
+            video:
+                "See RentBuild in action",
+
+            videoAria:
+                "See RentBuild in action. Video coming soon.",
+
+            items: [
+                {
+                    title:
+                        "Equipment Management",
+
+                    body:
+                        "Register your machinery and keep its location, availability, and condition organized in one place."
+                },
+                {
+                    title:
+                        "Reservations & Rentals",
+
+                    body:
+                        "Keep bookings, contracts, deliveries, and returns connected throughout the rental cycle."
+                },
+                {
+                    title:
+                        "Maintenance & Incidents",
+
+                    body:
+                        "Track inspections, repairs, and incidents to keep equipment ready for its next rental."
+                },
+                {
+                    title:
+                        "Operational Reports",
+
+                    body:
+                        "Review equipment usage, rental activity, revenue, and maintenance history to support your decisions."
+                }
+            ]
+
+        },
+
+        video: {
+            soon:
+                "Video coming soon"
         }
 
     },
@@ -303,6 +351,54 @@ const translations = {
             art:
                 "Estación de trabajo con tarjetas de servicio, alquiler y devolución de equipos."
 
+        },
+        showcase: {
+
+            title:
+                "Funciones RentBuild.\nControl real, todos los días.",
+
+            video:
+                "Mira RentBuild en acción",
+
+            videoAria:
+                "Mira RentBuild en acción. Video próximamente.",
+
+            items: [
+                {
+                    title:
+                        "Gestión de equipos",
+
+                    body:
+                        "Registra tu maquinaria y organiza su ubicación, disponibilidad y condición en un solo lugar."
+                },
+                {
+                    title:
+                        "Reservas y alquileres",
+
+                    body:
+                        "Conecta reservas, contratos, entregas y devoluciones durante todo el ciclo de alquiler."
+                },
+                {
+                    title:
+                        "Mantenimiento e incidentes",
+
+                    body:
+                        "Registra inspecciones, reparaciones e incidentes para preparar los equipos para su próximo alquiler."
+                },
+                {
+                    title:
+                        "Reportes operativos",
+
+                    body:
+                        "Consulta el uso de equipos, la actividad de alquiler, los ingresos y el historial de mantenimiento para apoyar tus decisiones."
+                }
+            ]
+
+        },
+
+        video: {
+            soon:
+                "Video próximamente"
         }
 
     }
