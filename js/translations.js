@@ -58,7 +58,9 @@ const translations = {
                 "Active",
 
             today:
-                "Today"
+                "Today",
+            returnRecorded:
+                "Return recorded"
         },
         operation: {
 
@@ -130,6 +132,23 @@ const translations = {
                 }
             ]
 
+        },
+        benefits: {
+
+            title:
+                "Greater control over every rental",
+
+            items: [
+                "Updated availability of each piece of equipment",
+                "Bookings without date conflicts",
+                "Tracking deliveries and returns",
+                "Incident management and maintenance",
+                "Complete history of each piece of machinery"
+            ],
+
+            art:
+                "A workstation with equipment service, rental, and return status cards."
+
         }
 
     },
@@ -192,7 +211,9 @@ const translations = {
                 "Activo",
 
             today:
-                "Hoy"
+                "Hoy",
+            returnRecorded:
+                "Devolución registrada"
         },
         operation: {
 
@@ -264,6 +285,23 @@ const translations = {
                         "Consulta información sobre alquileres, uso, ingresos y mantenimiento."
                 }
             ]
+
+        },
+        benefits: {
+
+            title:
+                "Mayor control sobre cada alquiler",
+
+            items: [
+                "Disponibilidad actualizada de cada equipo",
+                "Reservas sin conflictos de fechas",
+                "Seguimiento de entregas y devoluciones",
+                "Gestión de incidentes y mantenimiento",
+                "Historial completo de cada máquina"
+            ],
+
+            art:
+                "Estación de trabajo con tarjetas de servicio, alquiler y devolución de equipos."
 
         }
 

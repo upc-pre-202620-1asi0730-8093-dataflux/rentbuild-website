@@ -3,16 +3,25 @@
    ======================================== */
 
 
-/* ----------------------------------------
-   Navigation
-   ---------------------------------------- */
+/* ========================================
+   NAVIGATION
+   ======================================== */
 
-const menuButton = document.querySelector("#menu-button");
-const navigationPanel = document.querySelector("#main-navigation");
-const navigationLinks = document.querySelectorAll("[data-section-link]");
+const menuButton =
+    document.querySelector("#menu-button");
+
+const navigationPanel =
+    document.querySelector("#main-navigation");
+
+const navigationLinks =
+    document.querySelectorAll("[data-section-link]");
 
 
 function closeNavigation() {
+
+    if (!navigationPanel || !menuButton) {
+        return;
+    }
 
     navigationPanel.classList.remove("is-open");
 
@@ -26,6 +35,10 @@ function closeNavigation() {
 
 function toggleNavigation() {
 
+    if (!navigationPanel || !menuButton) {
+        return;
+    }
+
     const isOpen =
         navigationPanel.classList.toggle("is-open");
 
@@ -37,10 +50,14 @@ function toggleNavigation() {
 }
 
 
-menuButton.addEventListener(
-    "click",
-    toggleNavigation
-);
+if (menuButton) {
+
+    menuButton.addEventListener(
+        "click",
+        toggleNavigation
+    );
+
+}
 
 
 navigationLinks.forEach(link => {
@@ -53,94 +70,105 @@ navigationLinks.forEach(link => {
 });
 
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+    "keydown",
+    event => {
 
-    if (
-        event.key === "Escape" &&
-        navigationPanel.classList.contains("is-open")
-    ) {
+        if (
+            event.key === "Escape" &&
+            navigationPanel?.classList.contains("is-open")
+        ) {
 
-        closeNavigation();
+            closeNavigation();
 
-        menuButton.focus();
+            menuButton?.focus();
+
+        }
 
     }
+);
 
-});
 
-
-/* ----------------------------------------
-   Active navigation section
-   ---------------------------------------- */
+/* ========================================
+   ACTIVE NAVIGATION SECTION
+   ======================================== */
 
 const sections =
     document.querySelectorAll("main section[id]");
 
 
-const sectionObserver =
-    new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-        entries => {
+    const sectionObserver =
+        new IntersectionObserver(
 
-            entries.forEach(entry => {
+            entries => {
 
-                if (!entry.isIntersecting) {
-                    return;
-                }
+                entries.forEach(entry => {
 
-                const sectionId =
-                    entry.target.id;
-
-                navigationLinks.forEach(link => {
-
-                    const target =
-                        link.getAttribute("href");
-
-                    if (target === `#${sectionId}`) {
-
-                        link.setAttribute(
-                            "aria-current",
-                            "location"
-                        );
-
-                    } else {
-
-                        link.removeAttribute(
-                            "aria-current"
-                        );
-
+                    if (!entry.isIntersecting) {
+                        return;
                     }
+
+                    const sectionId =
+                        entry.target.id;
+
+
+                    navigationLinks.forEach(link => {
+
+                        const target =
+                            link.getAttribute("href");
+
+
+                        if (target === `#${sectionId}`) {
+
+                            link.setAttribute(
+                                "aria-current",
+                                "location"
+                            );
+
+                        } else {
+
+                            link.removeAttribute(
+                                "aria-current"
+                            );
+
+                        }
+
+                    });
 
                 });
 
-            });
+            },
 
-        },
+            {
+                rootMargin:
+                    "-15% 0px -60% 0px"
+            }
 
-        {
-            rootMargin:
-                "-15% 0px -60% 0px"
-        }
-
-    );
+        );
 
 
-sections.forEach(section => {
+    sections.forEach(section => {
 
-    sectionObserver.observe(section);
+        sectionObserver.observe(section);
 
-});
+    });
+
+}
 
 
-/* ----------------------------------------
-   Internationalization
-   ---------------------------------------- */
+/* ========================================
+   INTERNATIONALIZATION
+   ======================================== */
 
 const languageButton =
     document.querySelector("#language-switch");
 
 const languageTrack =
-    document.querySelector(".language-switch__track");
+    document.querySelector(
+        ".language-switch__track"
+    );
 
 const languageLabels =
     document.querySelectorAll(
@@ -148,6 +176,13 @@ const languageLabels =
     );
 
 
+/*
+    Finds a translation using paths such as:
+
+    nav.features
+    hero.title
+    benefits.items.0
+*/
 function getTranslation(language, path) {
 
     return path
@@ -161,12 +196,19 @@ function getTranslation(language, path) {
 }
 
 
+/*
+    Changes all translated content
+    to the selected language.
+*/
 function changeLanguage(language) {
 
-    document.documentElement.lang = language;
+    document.documentElement.lang =
+        language;
 
 
-    /* Text content */
+    /* ----------------------------------------
+       Text content
+       ---------------------------------------- */
 
     document
         .querySelectorAll("[data-i18n]")
@@ -181,14 +223,19 @@ function changeLanguage(language) {
                     key
                 );
 
-            if (value) {
-                element.textContent = value;
+            if (value !== undefined) {
+
+                element.textContent =
+                    value;
+
             }
 
         });
 
 
-    /* ARIA labels */
+    /* ----------------------------------------
+       ARIA labels
+       ---------------------------------------- */
 
     document
         .querySelectorAll(
@@ -205,7 +252,7 @@ function changeLanguage(language) {
                     key
                 );
 
-            if (value) {
+            if (value !== undefined) {
 
                 element.setAttribute(
                     "aria-label",
@@ -217,7 +264,40 @@ function changeLanguage(language) {
         });
 
 
-    /* Language switch */
+    /* ----------------------------------------
+       Alternative text
+       ---------------------------------------- */
+
+    document
+        .querySelectorAll(
+            "[data-i18n-alt]"
+        )
+        .forEach(element => {
+
+            const key =
+                element.dataset.i18nAlt;
+
+            const value =
+                getTranslation(
+                    language,
+                    key
+                );
+
+            if (value !== undefined) {
+
+                element.setAttribute(
+                    "alt",
+                    value
+                );
+
+            }
+
+        });
+
+
+    /* ----------------------------------------
+       Language switch appearance
+       ---------------------------------------- */
 
     languageLabels.forEach(label => {
 
@@ -229,11 +309,19 @@ function changeLanguage(language) {
     });
 
 
-    languageTrack.classList.toggle(
-        "is-spanish",
-        language === "es"
-    );
+    if (languageTrack) {
 
+        languageTrack.classList.toggle(
+            "is-spanish",
+            language === "es"
+        );
+
+    }
+
+
+    /* ----------------------------------------
+       Save selected language
+       ---------------------------------------- */
 
     try {
 
@@ -244,16 +332,22 @@ function changeLanguage(language) {
 
     } catch {
 
-        /* Optional persistence */
+        /*
+            The page can continue working
+            even when localStorage is unavailable.
+        */
 
     }
 
 }
 
 
-/* Load saved language */
+/* ========================================
+   LOAD SAVED LANGUAGE
+   ======================================== */
 
 let currentLanguage = "en";
+
 
 try {
 
@@ -261,6 +355,7 @@ try {
         localStorage.getItem(
             "rentbuild-language"
         );
+
 
     if (
         savedLanguage === "en" ||
@@ -274,7 +369,10 @@ try {
 
 } catch {
 
-    /* localStorage unavailable */
+    /*
+        Use English if localStorage
+        cannot be accessed.
+    */
 
 }
 
@@ -282,20 +380,27 @@ try {
 changeLanguage(currentLanguage);
 
 
-/* Toggle EN / ES */
+/* ========================================
+   EN / ES BUTTON
+   ======================================== */
 
-languageButton.addEventListener(
-    "click",
-    () => {
+if (languageButton) {
 
-        currentLanguage =
-            currentLanguage === "en"
-                ? "es"
-                : "en";
+    languageButton.addEventListener(
+        "click",
+        () => {
 
-        changeLanguage(
-            currentLanguage
-        );
+            currentLanguage =
+                currentLanguage === "en"
+                    ? "es"
+                    : "en";
 
-    }
-);
+
+            changeLanguage(
+                currentLanguage
+            );
+
+        }
+    );
+
+}

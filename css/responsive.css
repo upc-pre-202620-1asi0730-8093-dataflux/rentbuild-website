@@ -321,6 +321,24 @@
         font-size: 16px;
         line-height: 1.65;
     }
+    .benefits__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .benefits__visual {
+        max-width: 540px;
+
+        margin-inline: auto;
+    }
+
+    .benefits__list {
+        margin-top: 28px;
+
+        font-size: 16px;
+        line-height: 1.7;
+    }
 
 
 }
@@ -371,5 +389,14 @@
 
     .feature-card p {
         font-size: 14px;
+    }
+    .benefits__visual {
+        max-width: 100%;
+    }
+
+    .benefits__return {
+        width: 55%;
+
+        font-size: 11px;
     }
 }
