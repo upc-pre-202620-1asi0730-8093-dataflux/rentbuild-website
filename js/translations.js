@@ -236,6 +236,30 @@ const translations = {
                 }
             ]
 
+        },
+        team: {
+
+            title:
+                "Our Team",
+
+            role:
+                "Software Engineering Student",
+
+            photoPending:
+                "Team photo pending",
+
+            bios: [
+                "Software Engineering student at XX. Full Stack developer with experience in Spring Boot, Angular, Vue.js, and Python, as well as a background in QA Automation.",
+
+                "I have knowledge in programming and experience building user interfaces. I consider myself a responsible and persistent person.",
+
+                "22 years old. A calm, collaborative, and adaptable person who enjoys working as a team. I have knowledge in C++ and Python and always look for ways to do things efficiently.",
+
+                "Software Engineering student passionate about creating technological solutions. My approach goes beyond programming — I’m interested in developing digital experiences that are both functional and enjoyable. I have knowledge in C++, HTML, and CSS.",
+
+                "20 years old. A responsible and proactive student with a solid technical foundation in C++. I stand out for my ability to contribute creative solutions and my commitment to constant learning in professional environments."
+            ]
+
         }
 
     },
@@ -475,6 +499,30 @@ const translations = {
                     body:
                         "Registra incidentes, inspecciones, reparaciones y actividades de mantenimiento para preparar los equipos para futuros alquileres."
                 }
+            ]
+
+        },
+        team: {
+
+            title:
+                "Nuestro equipo",
+
+            role:
+                "Estudiante de Ingeniería de Software",
+
+            photoPending:
+                "Fotografía del integrante pendiente",
+
+            bios: [
+                "Estudiante de Ingeniería de Software en la XXX. Desarrollador Full Stack con experiencia en Spring Boot, Angular, Vue.js y Python, además de conocimientos en QA Automation.",
+
+                "Tengo conocimientos en el área de programación y experiencia haciendo interfaces de usuario. Me considero una persona responsable y persistente.",
+
+                "22 años. Una persona tranquila, colaborativa y adaptable que disfruta trabajar en equipo. Tengo conocimientos en C++ y Python y siempre busco formas de hacer las cosas de manera eficiente.",
+
+                "Estudiante de Ingeniería de Software apasionado por crear soluciones tecnológicas. Mi enfoque va más allá de la programación: me interesa desarrollar experiencias digitales funcionales y agradables. Tengo conocimientos en C++, HTML y CSS.",
+
+                "20 años. Estudiante responsable y proactivo con una sólida base técnica en C++. Destaco por mi capacidad para aportar soluciones creativas y mi compromiso con el aprendizaje constante en entornos profesionales."
             ]
 
         }

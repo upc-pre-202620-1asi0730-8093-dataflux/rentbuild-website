@@ -2,6 +2,8 @@
     /* Colors */
     --color-primary: #f59e0b;
     --color-primary-dark: #b86d00;
+    --color-team-heading: var(--color-navy);
+    --color-team-accent: var(--color-primary);
 
     --color-navy: #1e3a5f;
     --color-brand-blue: #1e3a5f;

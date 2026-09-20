@@ -533,3 +533,87 @@ accordionTriggers.forEach(trigger => {
     );
 
 });
+
+/* ========================================
+   TEAM PHOTOS
+   ======================================== */
+
+const teamPhotos =
+    document.querySelectorAll(
+        "[data-team-photo]"
+    );
+
+
+const teamPhotoExtensions = [
+    "webp",
+    "png",
+    "jpg",
+    "jpeg"
+];
+
+
+teamPhotos.forEach(image => {
+
+    const photoName =
+        image.dataset.photo;
+
+    const fallback =
+        image.nextElementSibling;
+
+    let extensionIndex = 0;
+
+
+    function tryNextExtension() {
+
+        if (
+            extensionIndex >=
+            teamPhotoExtensions.length
+        ) {
+
+            image.hidden = true;
+
+            if (fallback) {
+                fallback.hidden = false;
+            }
+
+            return;
+        }
+
+
+        const extension =
+            teamPhotoExtensions[
+                extensionIndex
+                ];
+
+        extensionIndex += 1;
+
+
+        image.src =
+            `./assets/images/team/${photoName}.${extension}`;
+
+    }
+
+
+    image.addEventListener(
+        "error",
+        tryNextExtension
+    );
+
+
+    image.addEventListener(
+        "load",
+        () => {
+
+            image.hidden = false;
+
+            if (fallback) {
+                fallback.hidden = true;
+            }
+
+        }
+    );
+
+
+    tryNextExtension();
+
+});

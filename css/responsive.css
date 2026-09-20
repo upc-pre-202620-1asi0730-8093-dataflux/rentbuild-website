@@ -78,6 +78,31 @@
     .about__grid {
         gap: 35px;
     }
+    .team-card {
+        padding-inline: 20px;
+    }
+
+    .team-card:nth-child(4),
+    .team-card:nth-child(5) {
+        margin-inline: 25px;
+    }
+
+    .team-card__avatar {
+        width: 105px;
+        height: 105px;
+    }
+
+    .team-card h3 {
+        font-size: 24px;
+    }
+
+    .team-card__role {
+        font-size: 14px;
+    }
+
+    .team-card__bio {
+        font-size: 18px;
+    }
 }
 
 
@@ -200,6 +225,28 @@
 
     .rental-cycle .cycle-icon {
         font-size: 23px;
+    }
+    .team__grid {
+        gap: 35px 22px;
+    }
+
+    .team-card {
+        width: calc((100% - 44px) / 3);
+
+        padding: 20px 16px;
+    }
+
+    .team-card:nth-child(4),
+    .team-card:nth-child(5) {
+        margin-inline: 22px;
+    }
+
+    .team-card h3 {
+        font-size: 18px;
+    }
+
+    .team-card__bio {
+        font-size: 13px;
     }
 }
 
@@ -428,6 +475,52 @@
     .about .video-frame {
         margin-top: 0;
     }
+    .team {
+        padding-block: 58px;
+    }
+
+    .team .container {
+        width: calc(100% - 40px);
+    }
+
+    .team__heading {
+        font-size: 34px;
+    }
+
+    .team__grid {
+        gap: 30px 22px;
+    }
+
+    .team-card {
+        width: calc((100% - 22px) / 2);
+
+        min-height: 0;
+
+        padding: 24px 18px;
+    }
+
+    .team-card:nth-child(4),
+    .team-card:nth-child(5) {
+        margin: 0;
+    }
+
+    .team-card__avatar {
+        width: 101px;
+        height: 101px;
+    }
+
+    .team-card h3 {
+        font-size: 21px;
+    }
+
+    .team-card__role {
+        font-size: 14px;
+    }
+
+    .team-card__bio {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 
 
 }
@@ -490,5 +583,24 @@
     }
     .showcase__item h3 {
         font-size: 20px;
+    }
+    .team__grid {
+        gap: 24px;
+    }
+
+    .team-card {
+        width: 100%;
+
+        max-width: 330px;
+
+        padding: 24px;
+    }
+
+    .team-card h3 {
+        font-size: 21px;
+    }
+
+    .team-card__bio {
+        font-size: 14px;
     }
 }
