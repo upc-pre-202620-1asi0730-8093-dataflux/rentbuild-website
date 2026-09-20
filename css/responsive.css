@@ -106,6 +106,18 @@
     .pricing-card .btn {
         font-size: 16px;
     }
+    .site-footer__grid {
+        gap: 26px;
+    }
+
+    .site-footer__brand .brand__word {
+        font-size: 32px;
+    }
+
+    .site-footer__brand .brand__mark {
+        width: 50px;
+        height: auto;
+    }
 }
 
 
@@ -261,6 +273,14 @@
 
     .pricing-card__details {
         padding-inline: 13px;
+    }
+    .site-footer__grid {
+        grid-template-columns:
+        1.6fr 1fr 1fr;
+    }
+
+    .site-footer__column:last-child {
+        grid-column: 2;
     }
 }
 
@@ -605,6 +625,41 @@
     .contact-form {
         padding: 26px;
     }
+    .site-footer__grid {
+        grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+        gap: 28px 20px;
+    }
+
+    .site-footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer__column:last-child {
+        grid-column: auto;
+    }
+
+    .site-footer__bottom {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin-top: 32px;
+    }
+
+    .site-footer__column a {
+        font-size: 14px;
+    }
+
+    .site-footer__bottom button {
+        font-size: 13px;
+    }
 
 
 }
@@ -686,5 +741,40 @@
 
     .team-card__bio {
         font-size: 14px;
+    }
+    .site-footer__grid {
+        grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+    }
+
+    .site-footer__column h2 {
+        font-size: 15px;
+    }
+
+    .site-footer__column a {
+        font-size: 13px;
+    }
+
+    .site-footer__bottom > div {
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .site-footer__bottom button {
+        font-size: 12px;
+    }
+
+    .site-footer__brand .brand__mark {
+        width: 48px;
+        height: 53px;
+    }
+
+    .legal-dialog {
+        padding:
+                42px 24px 28px;
     }
 }

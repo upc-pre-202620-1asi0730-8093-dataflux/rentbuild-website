@@ -1856,3 +1856,316 @@
 
     font-size: 13px;
 }
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.site-footer {
+    padding-block: 56px 36px;
+
+    background: var(--color-footer);
+
+    color: #dce4ec;
+}
+
+
+/* Main grid */
+
+.site-footer__grid {
+    display: grid;
+
+    grid-template-columns:
+        2.4fr 1fr 1fr 1fr;
+
+    align-items: start;
+
+    gap: 40px;
+}
+
+
+/* Brand */
+
+.footer-brand {
+    display: inline-block;
+}
+
+.site-footer__brand .brand {
+    display: flex;
+
+    align-items: center;
+}
+
+.site-footer__brand .brand__word {
+    color: #ffffff;
+
+    font-size: 46px;
+}
+
+.site-footer__brand .brand__mark {
+    width: 70px;
+    height: 77px;
+
+    object-fit: contain;
+}
+
+.site-footer__brand > p {
+    max-width: 280px;
+
+    margin-top: 14px;
+
+    color: #c4cdd8;
+
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* Newsletter */
+
+.newsletter {
+    margin-top: 22px;
+}
+
+.newsletter__field {
+    display: flex;
+
+    align-items: center;
+
+    max-width: 410px;
+
+    gap: 8px;
+
+    padding: 6px 6px 6px 18px;
+
+    border: 1.5px solid
+    rgb(255 255 255 / 35%);
+
+    border-radius: 999px;
+
+    background: transparent;
+}
+
+.newsletter__field input {
+    min-width: 0;
+
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: none;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+.newsletter__field input::placeholder {
+    color:
+            rgb(255 255 255 / 55%);
+}
+
+.newsletter__field button {
+    display: flex;
+
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--color-primary);
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s,
+            transform 0.15s;
+}
+
+.newsletter__field button:hover {
+    background: #ffb521;
+
+    transform: scale(1.08);
+}
+
+.newsletter__field button:disabled,
+.newsletter__field input:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+}
+
+.newsletter__status {
+    min-height: 20px;
+
+    margin-top: 8px;
+    padding-left: 4px;
+
+    color: #c4cdd8;
+
+    font-size: 12px;
+}
+
+
+/* Navigation columns */
+
+.site-footer__column h2 {
+    margin-bottom: 16px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.site-footer__column a {
+    display: block;
+
+    padding-block: 5px;
+
+    color: #c4cdd8;
+
+    font-size: 14px;
+
+    transition: color 0.2s;
+}
+
+.site-footer__column a:hover {
+    color: #ffffff;
+}
+
+
+/* Bottom */
+
+.site-footer__bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 14px;
+
+    margin-top: 42px;
+
+    color: #c4cdd8;
+
+    font-size: 14px;
+}
+
+/*
+    This was also hidden in the original
+    visual implementation.
+*/
+.site-footer__bottom > span {
+    display: none;
+}
+
+.site-footer__bottom > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.site-footer__bottom button {
+    border: none;
+
+    background: none;
+
+    color: #dce4ec;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.2s;
+}
+
+.site-footer__bottom button:hover {
+    color: #ffffff;
+}
+
+
+/* ========================================
+   LEGAL DIALOG
+   ======================================== */
+
+.legal-dialog {
+    width: min(
+            520px,
+            calc(100% - 40px)
+    );
+
+    padding: 42px 36px 34px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    color: var(--color-text);
+
+    box-shadow:
+            0 25px 70px
+            rgb(15 23 42 / 25%);
+}
+
+.legal-dialog::backdrop {
+    background:
+            rgb(15 23 42 / 55%);
+}
+
+.legal-dialog__close {
+    position: absolute;
+
+    top: 14px;
+    right: 18px;
+
+    border: none;
+
+    background: none;
+
+    color: var(--color-muted);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.legal-dialog__eyebrow {
+    color: var(--color-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.legal-dialog h2 {
+    margin-top: 10px;
+
+    font-size: 30px;
+}
+
+.legal-dialog p {
+    margin-block: 16px 26px;
+
+    color: var(--color-muted);
+
+    line-height: 1.7;
+}

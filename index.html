@@ -1892,8 +1892,311 @@
         id="site-footer"
         class="site-footer"
 >
-    <!-- Footer content will be migrated here -->
+    <div class="container">
+
+        <div class="site-footer__grid">
+
+            <!-- Brand -->
+            <div class="site-footer__brand">
+
+                <a
+                        href="#home"
+                        class="footer-brand"
+                        aria-label="RentBuild"
+                >
+                    <span class="brand brand--light">
+
+                        <img
+                                class="brand__mark"
+                                src="./assets/images/logo-dark.png"
+                                alt=""
+                                aria-hidden="true"
+                                width="57"
+                                height="57"
+                                draggable="false"
+                        >
+
+                        <span
+                                class="brand__word"
+                                aria-hidden="true"
+                        >
+                            entBuild
+                        </span>
+
+                    </span>
+                </a>
+
+
+                <p data-i18n="footer.tagline">
+                    Get started. Take control of your equipment.
+                </p>
+
+
+                <!-- Newsletter -->
+                <form
+                        id="newsletter-form"
+                        class="newsletter"
+                >
+
+                    <label
+                            class="visually-hidden"
+                            for="newsletter-email"
+                            data-i18n="footer.email"
+                    >
+                        Enter your email here
+                    </label>
+
+                    <div class="newsletter__field">
+
+                        <input
+                                id="newsletter-email"
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                                maxlength="254"
+                                placeholder="Enter your email here"
+                                data-i18n-placeholder="footer.email"
+                                aria-describedby="newsletter-status"
+                        >
+
+                        <button
+                                id="newsletter-submit"
+                                type="submit"
+                                aria-label="Subscribe to RentBuild updates"
+                                data-i18n-aria-label="footer.subscribe"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                    <p
+                            id="newsletter-status"
+                            class="newsletter__status"
+                            role="status"
+                            aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- Support -->
+            <nav
+                    class="site-footer__column"
+                    aria-label="Support"
+                    data-i18n-aria-label="footer.columns.0.title"
+            >
+
+                <h2 data-i18n="footer.columns.0.title">
+                    Support
+                </h2>
+
+                <a
+                        href="#how-it-works"
+                        data-i18n="footer.columns.0.links.0"
+                >
+                    Help centre
+                </a>
+
+                <a
+                        href="#pricing"
+                        data-i18n="footer.columns.0.links.1"
+                >
+                    Plans and access
+                </a>
+
+                <a
+                        href="#about"
+                        data-i18n="footer.columns.0.links.2"
+                >
+                    About
+                </a>
+
+                <a
+                        href="#contact"
+                        data-i18n="footer.columns.0.links.3"
+                >
+                    Contact us
+                </a>
+
+            </nav>
+
+
+            <!-- Help and solutions -->
+            <nav
+                    class="site-footer__column"
+                    aria-label="Help and Solution"
+                    data-i18n-aria-label="footer.columns.1.title"
+            >
+
+                <h2 data-i18n="footer.columns.1.title">
+                    Help and Solution
+                </h2>
+
+                <a
+                        href="#contact"
+                        data-i18n="footer.columns.1.links.0"
+                >
+                    Talk to support
+                </a>
+
+                <a
+                        href="#product-showcase"
+                        data-i18n="footer.columns.1.links.1"
+                >
+                    Product demo
+                </a>
+
+                <a
+                        href="#benefits"
+                        data-i18n="footer.columns.1.links.2"
+                >
+                    Rental control
+                </a>
+
+                <a
+                        href="#features"
+                        data-i18n="footer.columns.1.links.3"
+                >
+                    Equipment management
+                </a>
+
+            </nav>
+
+
+            <!-- Product -->
+            <nav
+                    class="site-footer__column"
+                    aria-label="Product"
+                    data-i18n-aria-label="footer.columns.2.title"
+            >
+
+                <h2 data-i18n="footer.columns.2.title">
+                    Product
+                </h2>
+
+                <a
+                        href="#features"
+                        data-i18n="footer.columns.2.links.0"
+                >
+                    Features
+                </a>
+
+                <a
+                        href="#benefits"
+                        data-i18n="footer.columns.2.links.1"
+                >
+                    Benefits
+                </a>
+
+                <a
+                        href="#product-showcase"
+                        data-i18n="footer.columns.2.links.2"
+                >
+                    See how it works
+                </a>
+
+                <a
+                        href="#pricing"
+                        data-i18n="footer.columns.2.links.3"
+                >
+                    Pricing product
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Bottom -->
+        <div class="site-footer__bottom">
+
+            <span>
+                © <span id="footer-year"></span>
+                RentBuild · DataFlux
+            </span>
+
+            <div>
+
+                <button
+                        type="button"
+                        data-legal-trigger
+                        data-i18n="footer.terms"
+                >
+                    Terms and Conditions
+                </button>
+
+                <span aria-hidden="true">
+                    ·
+                </span>
+
+                <button
+                        type="button"
+                        data-legal-trigger
+                        data-i18n="footer.privacy"
+                >
+                    Privacy Policy
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 </footer>
+
+
+<!-- Legal information -->
+<dialog
+        id="legal-dialog"
+        class="legal-dialog"
+        aria-labelledby="legal-title"
+        aria-describedby="legal-description"
+>
+
+    <button
+            id="legal-dialog-close"
+            class="legal-dialog__close"
+            type="button"
+            aria-label="Close dialog"
+            data-i18n-aria-label="legal.close"
+    >
+        ×
+    </button>
+
+    <span class="legal-dialog__eyebrow">
+        RENTBUILD
+    </span>
+
+    <h2
+            id="legal-title"
+            data-i18n="legal.title"
+    >
+        Information coming soon
+    </h2>
+
+    <p
+            id="legal-description"
+            data-i18n="legal.body"
+    >
+        This document is not published yet.
+        It will be available before RentBuild
+        account registration opens.
+    </p>
+
+    <button
+            id="legal-dialog-understood"
+            class="btn"
+            type="button"
+            data-i18n="legal.understood"
+    >
+        Keep exploring
+    </button>
+
+</dialog>
 
 <!-- JavaScript -->
 <script src="js/translations.js"></script>

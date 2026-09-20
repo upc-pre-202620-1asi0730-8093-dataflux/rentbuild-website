@@ -294,7 +294,35 @@ function changeLanguage(language) {
 
         });
 
+    /* ----------------------------------------
+    Placeholders
+    ---------------------------------------- */
 
+    document
+        .querySelectorAll(
+            "[data-i18n-placeholder]"
+        )
+        .forEach(element => {
+
+            const key =
+                element.dataset.i18nPlaceholder;
+
+            const value =
+                getTranslation(
+                    language,
+                    key
+                );
+
+            if (value !== undefined) {
+
+                element.setAttribute(
+                    "placeholder",
+                    value
+                );
+
+            }
+
+        });
     /* ----------------------------------------
        Language switch appearance
        ---------------------------------------- */
@@ -958,5 +986,294 @@ if (contactForm) {
 
         }
     );
+
+}
+
+/* ========================================
+   NEWSLETTER
+   ======================================== */
+
+const NEWSLETTER_ENDPOINT = "";
+
+
+const newsletterForm =
+    document.querySelector(
+        "#newsletter-form"
+    );
+
+const newsletterEmail =
+    document.querySelector(
+        "#newsletter-email"
+    );
+
+const newsletterSubmit =
+    document.querySelector(
+        "#newsletter-submit"
+    );
+
+const newsletterStatus =
+    document.querySelector(
+        "#newsletter-status"
+    );
+
+
+function setNewsletterStatus(status) {
+
+    if (!newsletterStatus) {
+        return;
+    }
+
+
+    if (!status) {
+
+        newsletterStatus.textContent = "";
+
+        delete newsletterStatus.dataset.i18n;
+
+        return;
+    }
+
+
+    const translationKey =
+        `footer.${status}`;
+
+
+    newsletterStatus.dataset.i18n =
+        translationKey;
+
+
+    const translatedText =
+        getTranslation(
+            currentLanguage,
+            translationKey
+        );
+
+
+    if (translatedText !== undefined) {
+
+        newsletterStatus.textContent =
+            translatedText;
+
+    }
+
+}
+
+
+if (newsletterForm) {
+
+    newsletterForm.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            setNewsletterStatus("");
+
+
+            if (!NEWSLETTER_ENDPOINT) {
+
+                setNewsletterStatus(
+                    "unavailable"
+                );
+
+                return;
+            }
+
+
+            newsletterEmail.disabled = true;
+            newsletterSubmit.disabled = true;
+            newsletterSubmit.textContent = "…";
+
+
+            const controller =
+                new AbortController();
+
+
+            const timeout =
+                setTimeout(
+                    () => controller.abort(),
+                    10000
+                );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        NEWSLETTER_ENDPOINT,
+                        {
+
+                            method:
+                                "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify({
+                                    email:
+                                        newsletterEmail
+                                            .value
+                                            .trim()
+                                }),
+
+                            signal:
+                            controller.signal
+
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Subscription was not accepted"
+                    );
+
+                }
+
+
+                setNewsletterStatus(
+                    "success"
+                );
+
+                newsletterEmail.value = "";
+
+
+            } catch {
+
+                setNewsletterStatus(
+                    "error"
+                );
+
+
+            } finally {
+
+                clearTimeout(timeout);
+
+                newsletterEmail.disabled = false;
+                newsletterSubmit.disabled = false;
+                newsletterSubmit.textContent = "→";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   FOOTER LEGAL DIALOG
+   ======================================== */
+
+const legalDialog =
+    document.querySelector(
+        "#legal-dialog"
+    );
+
+const legalTriggers =
+    document.querySelectorAll(
+        "[data-legal-trigger]"
+    );
+
+const legalCloseButton =
+    document.querySelector(
+        "#legal-dialog-close"
+    );
+
+const legalUnderstoodButton =
+    document.querySelector(
+        "#legal-dialog-understood"
+    );
+
+
+let previousLegalFocus = null;
+
+
+function openLegalDialog() {
+
+    if (!legalDialog) {
+        return;
+    }
+
+    previousLegalFocus =
+        document.activeElement;
+
+    legalDialog.showModal();
+
+}
+
+
+function closeLegalDialog() {
+
+    if (!legalDialog) {
+        return;
+    }
+
+    legalDialog.close();
+
+}
+
+
+legalTriggers.forEach(trigger => {
+
+    trigger.addEventListener(
+        "click",
+        openLegalDialog
+    );
+
+});
+
+
+legalCloseButton?.addEventListener(
+    "click",
+    closeLegalDialog
+);
+
+
+legalUnderstoodButton?.addEventListener(
+    "click",
+    closeLegalDialog
+);
+
+
+legalDialog?.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === legalDialog) {
+            closeLegalDialog();
+        }
+
+    }
+);
+
+
+legalDialog?.addEventListener(
+    "close",
+    () => {
+
+        previousLegalFocus?.focus();
+
+    }
+);
+
+
+/* ========================================
+   FOOTER YEAR
+   ======================================== */
+
+const footerYear =
+    document.querySelector(
+        "#footer-year"
+    );
+
+if (footerYear) {
+
+    footerYear.textContent =
+        new Date().getFullYear();
 
 }

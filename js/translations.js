@@ -387,6 +387,85 @@ const translations = {
             social:
                 "RentBuild social media"
 
+        },
+        footer: {
+
+            tagline:
+                "Get started. Take control of your equipment.",
+
+            email:
+                "Enter your email here",
+
+            subscribe:
+                "Subscribe to RentBuild updates",
+
+            success:
+                "You're subscribed. Thank you for your interest in RentBuild!",
+
+            error:
+                "We couldn't send your request. Please try again later.",
+
+            unavailable:
+                "Subscriptions are coming soon. Your email has not been sent or saved.",
+
+            terms:
+                "Terms and Conditions",
+
+            privacy:
+                "Privacy Policy",
+
+            columns: [
+                {
+                    title:
+                        "Support",
+
+                    links: [
+                        "Help centre",
+                        "Plans and access",
+                        "About",
+                        "Contact us"
+                    ]
+                },
+                {
+                    title:
+                        "Help and Solution",
+
+                    links: [
+                        "Talk to support",
+                        "Product demo",
+                        "Rental control",
+                        "Equipment management"
+                    ]
+                },
+                {
+                    title:
+                        "Product",
+
+                    links: [
+                        "Features",
+                        "Benefits",
+                        "See how it works",
+                        "Pricing product"
+                    ]
+                }
+            ]
+
+        },
+
+        legal: {
+
+            title:
+                "Information coming soon",
+
+            body:
+                "This document is not published yet. It will be available before RentBuild account registration opens.",
+
+            understood:
+                "Keep exploring",
+
+            close:
+                "Close dialog"
+
         }
 
     },
@@ -777,6 +856,85 @@ const translations = {
 
             social:
                 "Redes sociales de RentBuild"
+
+        },
+        footer: {
+
+            tagline:
+                "Empieza a tomar el control de tus equipos.",
+
+            email:
+                "Ingresa tu correo aquí",
+
+            subscribe:
+                "Suscribirse a novedades de RentBuild",
+
+            success:
+                "Te has suscrito. ¡Gracias por tu interés en RentBuild!",
+
+            error:
+                "No pudimos enviar tu solicitud. Vuelve a intentarlo más tarde.",
+
+            unavailable:
+                "Las suscripciones estarán disponibles pronto. Tu correo no se ha enviado ni guardado.",
+
+            terms:
+                "Términos y condiciones",
+
+            privacy:
+                "Política de privacidad",
+
+            columns: [
+                {
+                    title:
+                        "Soporte",
+
+                    links: [
+                        "Centro de ayuda",
+                        "Planes y acceso",
+                        "Acerca de",
+                        "Contáctanos"
+                    ]
+                },
+                {
+                    title:
+                        "Ayuda y soluciones",
+
+                    links: [
+                        "Hablar con soporte",
+                        "Demostración",
+                        "Control de alquileres",
+                        "Gestión de equipos"
+                    ]
+                },
+                {
+                    title:
+                        "Producto",
+
+                    links: [
+                        "Funciones",
+                        "Beneficios",
+                        "Cómo funciona",
+                        "Planes del producto"
+                    ]
+                }
+            ]
+
+        },
+
+        legal: {
+
+            title:
+                "Información próximamente",
+
+            body:
+                "Este documento aún no se ha publicado. Estará disponible antes de que se habilite el registro de cuentas en RentBuild.",
+
+            understood:
+                "Seguir explorando",
+
+            close:
+                "Cerrar diálogo"
 
         }
 
