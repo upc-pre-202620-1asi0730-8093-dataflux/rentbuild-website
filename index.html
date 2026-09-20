@@ -1419,12 +1419,352 @@
         </div>
     </section>
 
-    <!-- Pricing -->
     <section
             id="pricing"
-            class="pricing"
+            class="pricing section"
+            aria-labelledby="pricing-title"
     >
-        <!-- Pricing plans will be migrated here -->
+        <div class="container">
+
+            <header class="pricing__header">
+
+                <h2
+                        id="pricing-title"
+                        data-i18n="pricing.title"
+                >
+                    Plans that grow
+                    with your business
+                </h2>
+
+                <p
+                        class="section-copy"
+                        data-i18n="pricing.body"
+                >
+                    Choose the features you need to manage your equipment with RentBuild.
+                </p>
+
+                <div
+                        class="billing-switch"
+                        role="group"
+                        aria-label="Billing period"
+                        data-i18n-aria-label="pricing.billing"
+                >
+                    <button
+                            type="button"
+                            data-billing-period="monthly"
+                            aria-pressed="false"
+                            data-i18n="pricing.monthly"
+                    >
+                        Monthly
+                    </button>
+
+                    <button
+                            type="button"
+                            class="is-active"
+                            data-billing-period="annual"
+                            aria-pressed="true"
+                            data-i18n="pricing.annual"
+                    >
+                        Annual
+                    </button>
+                </div>
+
+            </header>
+
+
+            <div class="pricing__grid">
+
+                <!-- BASIC -->
+                <article class="pricing-card">
+
+                    <header class="pricing-card__header">
+
+                        <h3 data-i18n="pricing.basic.name">
+                            Basic
+                        </h3>
+
+                        <p data-i18n="pricing.basic.body">
+                            Essential functions to
+                            get started
+                        </p>
+
+                    </header>
+
+                    <div class="pricing-card__details">
+
+                        <ul class="check-list">
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.basic.features.0">
+                                Equipment management
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.basic.features.1">
+                                Reservations
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.basic.features.2">
+                                Rentals and returns
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.basic.features.3">
+                                Customers
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.basic.features.4">
+                                Standard support
+                            </span>
+                            </li>
+
+                        </ul>
+
+                        <a
+                                href="#contact"
+                                class="btn btn--white"
+                                data-plan="basic"
+                                data-i18n="pricing.basic.cta"
+                        >
+                            Select Basic
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRO -->
+                <article class="pricing-card pricing-card--featured">
+
+                    <header class="pricing-card__header">
+
+                        <h3 data-i18n="pricing.pro.name">
+                            Pro
+                        </h3>
+
+                        <p data-i18n="pricing.pro.body">
+                            Complete control of the
+                            operation
+                        </p>
+
+                    </header>
+
+                    <div class="pricing-card__details">
+
+                    <span
+                            class="pricing-card__badge"
+                            data-i18n="pricing.popular"
+                    >
+                        Most popular
+                    </span>
+
+                        <ul class="check-list">
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.pro.features.0">
+                                Everything included in the Basic plan
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.pro.features.1">
+                                Maintenance
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.pro.features.2">
+                                Operational reports
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.pro.features.3">
+                                Alerts and monitoring
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.pro.features.4">
+                                More users
+                            </span>
+                            </li>
+
+                        </ul>
+
+                        <a
+                                href="#contact"
+                                class="btn"
+                                data-plan="pro"
+                                data-i18n="pricing.pro.cta"
+                        >
+                            Choose Pro
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PREMIUM -->
+                <article class="pricing-card">
+
+                    <header class="pricing-card__header">
+
+                        <h3 data-i18n="pricing.premium.name">
+                            Premium
+                        </h3>
+
+                        <p data-i18n="pricing.premium.body">
+                            Your most complete view of equipment, rentals, and maintenance.
+                        </p>
+
+                    </header>
+
+                    <div class="pricing-card__details">
+
+                        <ul class="check-list">
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.premium.features.0">
+                                Everything included in Pro
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.premium.features.1">
+                                Extended equipment history
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.premium.features.2">
+                                Weekly and monthly usage comparisons
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.premium.features.3">
+                                Preventive maintenance planning
+                            </span>
+                            </li>
+
+                            <li>
+                            <span
+                                    class="check-mark"
+                                    aria-hidden="true"
+                            >✓</span>
+
+                                <span data-i18n="pricing.premium.features.4">
+                                Detailed progress reports with PDF export
+                            </span>
+                            </li>
+
+                        </ul>
+
+                        <a
+                                href="#contact"
+                                class="btn btn--white"
+                                data-plan="premium"
+                                data-i18n="pricing.premium.cta"
+                        >
+                            Select Premium
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <p
+                    id="pricing-period-note"
+                    class="pricing__period"
+                    aria-live="polite"
+                    data-i18n="pricing.annualNote"
+            >
+                Annual billing selected. Contact us for pricing.
+            </p>
+
+        </div>
     </section>
 
     <!-- Contact -->

@@ -249,7 +249,7 @@ const translations = {
                 "Team photo pending",
 
             bios: [
-                "Software Engineering student at XX. Full Stack developer with experience in Spring Boot, Angular, Vue.js, and Python, as well as a background in QA Automation.",
+                "Software Engineering student at UPC. Full Stack developer with experience in Spring Boot, Angular, Vue.js, and Python, as well as a background in QA Automation.",
 
                 "I have knowledge in programming and experience building user interfaces. I consider myself a responsible and persistent person.",
 
@@ -259,6 +259,96 @@ const translations = {
 
                 "20 years old. A responsible and proactive student with a solid technical foundation in C++. I stand out for my ability to contribute creative solutions and my commitment to constant learning in professional environments."
             ]
+
+        },
+        pricing: {
+
+            title:
+                "Plans that grow\nwith your business",
+
+            body:
+                "Choose the features you need to manage your equipment with RentBuild.",
+
+            billing:
+                "Billing period",
+
+            monthly:
+                "Monthly",
+
+            annual:
+                "Annual",
+
+            popular:
+                "Most popular",
+
+            monthlyNote:
+                "Monthly billing selected. Contact us for pricing.",
+
+            annualNote:
+                "Annual billing selected. Contact us for pricing.",
+
+
+            basic: {
+
+                name:
+                    "Basic",
+
+                body:
+                    "Essential functions to\nget started",
+
+                features: [
+                    "Equipment management",
+                    "Reservations",
+                    "Rentals and returns",
+                    "Customers",
+                    "Standard support"
+                ],
+
+                cta:
+                    "Select Basic"
+            },
+
+
+            pro: {
+
+                name:
+                    "Pro",
+
+                body:
+                    "Complete control of the\noperation",
+
+                features: [
+                    "Everything included in the Basic plan",
+                    "Maintenance",
+                    "Operational reports",
+                    "Alerts and monitoring",
+                    "More users"
+                ],
+
+                cta:
+                    "Choose Pro"
+            },
+
+
+            premium: {
+
+                name:
+                    "Premium",
+
+                body:
+                    "Your most complete view of equipment, rentals, and maintenance.",
+
+                features: [
+                    "Everything included in Pro",
+                    "Extended equipment history",
+                    "Weekly and monthly usage comparisons",
+                    "Preventive maintenance planning",
+                    "Detailed progress reports with PDF export"
+                ],
+
+                cta:
+                    "Select Premium"
+            }
 
         }
 
@@ -514,7 +604,7 @@ const translations = {
                 "Fotografía del integrante pendiente",
 
             bios: [
-                "Estudiante de Ingeniería de Software en la XXX. Desarrollador Full Stack con experiencia en Spring Boot, Angular, Vue.js y Python, además de conocimientos en QA Automation.",
+                "Estudiante de Ingeniería de Software en la UPC. Desarrollador Full Stack con experiencia en Spring Boot, Angular, Vue.js y Python, además de conocimientos en QA Automation.",
 
                 "Tengo conocimientos en el área de programación y experiencia haciendo interfaces de usuario. Me considero una persona responsable y persistente.",
 
@@ -524,6 +614,96 @@ const translations = {
 
                 "20 años. Estudiante responsable y proactivo con una sólida base técnica en C++. Destaco por mi capacidad para aportar soluciones creativas y mi compromiso con el aprendizaje constante en entornos profesionales."
             ]
+
+        },
+        pricing: {
+
+            title:
+                "Planes que crecen\ncon tu negocio",
+
+            body:
+                "Elige las funciones que necesitas para gestionar tus equipos con RentBuild.",
+
+            billing:
+                "Período de facturación",
+
+            monthly:
+                "Mensual",
+
+            annual:
+                "Anual",
+
+            popular:
+                "Más popular",
+
+            monthlyNote:
+                "Facturación mensual seleccionada. Consulta los precios con nosotros.",
+
+            annualNote:
+                "Facturación anual seleccionada. Consulta los precios con nosotros.",
+
+
+            basic: {
+
+                name:
+                    "Básico",
+
+                body:
+                    "Funciones esenciales\npara empezar",
+
+                features: [
+                    "Gestión de equipos",
+                    "Reservas",
+                    "Alquileres y devoluciones",
+                    "Clientes",
+                    "Soporte estándar"
+                ],
+
+                cta:
+                    "Elegir Básico"
+            },
+
+
+            pro: {
+
+                name:
+                    "Pro",
+
+                body:
+                    "Control completo\nde la operación",
+
+                features: [
+                    "Todo lo incluido en el plan Básico",
+                    "Mantenimiento",
+                    "Reportes operativos",
+                    "Alertas y monitoreo",
+                    "Más usuarios"
+                ],
+
+                cta:
+                    "Elegir Pro"
+            },
+
+
+            premium: {
+
+                name:
+                    "Premium",
+
+                body:
+                    "La visión más completa de tus equipos, alquileres y mantenimiento.",
+
+                features: [
+                    "Todo lo incluido en Pro",
+                    "Historial ampliado de equipos",
+                    "Comparaciones de uso semanales y mensuales",
+                    "Planificación de mantenimiento preventivo",
+                    "Reportes detallados con exportación a PDF"
+                ],
+
+                cta:
+                    "Elegir Premium"
+            }
 
         }
 

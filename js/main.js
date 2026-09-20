@@ -617,3 +617,84 @@ teamPhotos.forEach(image => {
     tryNextExtension();
 
 });
+
+
+/* ========================================
+   PRICING BILLING SWITCH
+   ======================================== */
+
+const billingButtons =
+    document.querySelectorAll(
+        ".billing-switch [data-billing-period]"
+    );
+
+const pricingPeriodNote =
+    document.querySelector(
+        "#pricing-period-note"
+    );
+
+
+billingButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const selectedPeriod =
+                button.dataset.billingPeriod;
+
+
+            billingButtons.forEach(
+                otherButton => {
+
+                    const isSelected =
+                        otherButton === button;
+
+                    otherButton.classList.toggle(
+                        "is-active",
+                        isSelected
+                    );
+
+                    otherButton.setAttribute(
+                        "aria-pressed",
+                        String(isSelected)
+                    );
+
+                }
+            );
+
+
+            if (pricingPeriodNote) {
+
+                const translationKey =
+                    selectedPeriod === "monthly"
+                        ? "pricing.monthlyNote"
+                        : "pricing.annualNote";
+
+
+                pricingPeriodNote.dataset.i18n =
+                    translationKey;
+
+
+                const translatedText =
+                    getTranslation(
+                        currentLanguage,
+                        translationKey
+                    );
+
+
+                if (
+                    translatedText !== undefined
+                ) {
+
+                    pricingPeriodNote.textContent =
+                        translatedText;
+
+                }
+
+            }
+
+        }
+    );
+
+});

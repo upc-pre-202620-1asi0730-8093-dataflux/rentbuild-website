@@ -103,6 +103,9 @@
     .team-card__bio {
         font-size: 18px;
     }
+    .pricing-card .btn {
+        font-size: 16px;
+    }
 }
 
 
@@ -247,6 +250,17 @@
 
     .team-card__bio {
         font-size: 13px;
+    }
+    .pricing__grid {
+        gap: 16px;
+    }
+
+    .pricing-card {
+        padding-inline: 12px;
+    }
+
+    .pricing-card__details {
+        padding-inline: 13px;
     }
 }
 
@@ -520,6 +534,62 @@
     .team-card__bio {
         font-size: 16px;
         line-height: 1.4;
+    }
+    .pricing {
+        padding-block: 58px;
+    }
+
+    .billing-switch button {
+        min-width: 120px;
+
+        font-size: 16px;
+    }
+
+    .pricing__grid {
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+
+        gap: 25px;
+
+        margin: 35px auto 0;
+    }
+
+    .pricing-card,
+    .pricing-card--featured {
+        margin: 0;
+
+        padding: 26px 17px 18px;
+    }
+
+    .pricing-card__header {
+        min-height: 120px;
+    }
+
+    .pricing-card--featured .pricing-card__header {
+        min-height: 143px;
+    }
+
+    .pricing-card__details {
+        padding: 22px;
+    }
+
+    .pricing-card__badge {
+        top: -39px;
+
+        padding: 7px 15px;
+
+        font-size: 12px;
+    }
+
+    .pricing-card .check-list {
+        font-size: 14px;
+    }
+
+    .pricing-card .btn {
+        min-height: 54px;
+
+        font-size: 16px;
     }
 
 
