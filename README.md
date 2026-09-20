@@ -1,166 +1,65 @@
-# RentBuild — DataFlux
+# RentBuild Landing Page
 
-Landing page oficial de RentBuild, una plataforma inteligente para la gestión y control de alquileres de maquinaria en el sector construcción.
+RentBuild is a SaaS solution designed to help equipment rental companies manage their machinery, reservations, rentals, deliveries, returns, incidents, and maintenance from a centralized platform.
 
-## Sobre el producto
+This repository contains the official **RentBuild Landing Page**, developed by the **DataFlux** team.
 
-RentBuild centraliza en un solo dashboard todo lo que hoy se gestiona de forma dispersa con chats, correos y hojas de cálculo. Está diseñada para gerentes de proyectos, equipos de logística e ingenieros residentes que buscan optimizar la disponibilidad, reserva y operación de maquinaria en obra.
+---
 
-La plataforma permite:
+## About RentBuild
 
-- Control digital de pedidos y disponibilidad de equipos.
-- Trazabilidad completa de órdenes, cotizaciones y facturas por proyecto.
-- Seguimiento del gasto real vs. proyectado para proteger el margen del proyecto.
-- Gestión del ciclo completo de alquiler: reservación, entrega, devolución y mantenimiento.
+RentBuild aims to simplify equipment rental operations by providing businesses with better visibility and control over the complete rental lifecycle.
 
-## Sobre este repositorio
+The platform focuses on areas such as:
 
-Este repositorio contiene el código fuente de la landing page pública del producto. La web está construida con Vue 3 + Vite, es liviana, responsive y soporta dos idiomas (inglés y español) mediante `vue-i18n`.
+- Equipment management
+- Equipment availability
+- Reservations
+- Rentals
+- Deliveries and returns
+- Maintenance
+- Incident tracking
+- Operational reports
 
-La propuesta visual se basa en un sistema de diseño modular con CSS Vanilla, usando variables, componentes reutilizables y una estructura clara orientada a la presentación del valor del producto.
+The Landing Page introduces the product, its main benefits, features, team, plans, and contact options.
 
-## Stack
+---
 
-| Herramienta | Versión |
-| --- | --- |
-| Vue | 3.5.33 |
-| Vite | 5.4.21 |
-| @vitejs/plugin-vue | 5.2.4 |
-| vue-i18n | 9.14.5 |
+## Technologies
 
-El proyecto usa JavaScript con ES Modules, Composition API en `<script setup>`, y estilos en CSS puro con variables, layout y componentes modulares.
+The Landing Page is developed exclusively with:
 
-## Estructura del proyecto
+- **HTML5** — semantic structure and accessibility
+- **CSS3** — layout, responsive design, components, and visual styles
+- **JavaScript** — interactions, internationalization, navigation, forms, and UI behavior
 
-```text
-public/
-  assets/
-    images/
-    videos/
-    references/
-src/
-  App.vue
-  main.js
-  i18n.js
-  locales/
-    en.json
-    es.json
-  assets/styles/
-    reset.css
-    variables.css
-    layout.css
-    main.css
-    responsive.css
-    components/
-  shared/presentation/components/
-    AccessDialog.vue
-    BrandLogo.vue
-    ReferenceArtwork.vue
-    SiteFooter.vue
-    TheHeader.vue
-    UserDashboard.vue
-    VideoPlaceholder.vue
-  value-proposition/presentation/components/
-    AboutRentBuild.vue
-    AppFeatures.vue
-    ContactUs.vue
-    OperationOverview.vue
-    OurTeam.vue
-    PricingCard.vue
-    PricingPlans.vue
-    ProductShowcase.vue
-    RentalBenefits.vue
-    TheHero.vue
-```
+No frontend framework or external JavaScript library is required.
 
-## Ejecutar localmente
+---
 
-Requisitos: Node.js 20.19+ o 22 LTS y npm.
-
-```bash
-npm ci
-npm run dev
-```
-
-Abre la dirección que muestra Vite, normalmente `http://localhost:5173`.
-
-Para compilar la versión de producción:
-
-```bash
-npm run build
-npm run preview
-```
-
-El resultado se genera en `dist/`.
-
-## Funcionalidades principales
-
-- Navegación responsive con menú móvil y cierre con Escape.
-- Selector de idioma EN/ES con persistencia local cuando el navegador lo permite.
-- Secciones con anclas reales para cada bloque de contenido.
-- Acordeones accesibles y bloques de información reutilizables.
-- Selector de plan y período de facturación con confirmación visual.
-- Diálogo de acceso con bloqueo de scroll y restauración del foco.
-- Newsletter con validación de email, manejo de errores y tiempo de espera configurable.
-- Sección "Contáctanos" con formulario (nombre, correo y mensaje), correo directo y enlaces a redes sociales.
-- Inicio de sesión y registro con formularios propios (correo/contraseña y nombre/correo/contraseña), enlazados entre sí y con el plan seleccionado cuando corresponde.
-- Dashboard de bienvenida tras iniciar sesión o registrarse (modo demo mientras no hay backend), con pestañas de Perfil (solo lectura) e Inventario de maquinaria (equipo, categoría, estado y unidades con datos de ejemplo), cierre de sesión y persistencia durante la pestaña activa.
-- Soporte para movimiento reducido y navegación por teclado.
-
-## Conectar servicios reales
-
-El proyecto está preparado para conectar endpoints reales usando variables de entorno con prefijo `VITE_`.
-
-Ejemplo:
-
-```dotenv
-VITE_SIGNUP_URL=https://tu-aplicacion.example/registro
-VITE_SIGNUP_ENDPOINT=https://tu-api.example/registro
-VITE_LOGIN_URL=https://tu-aplicacion.example/login
-VITE_LOGIN_ENDPOINT=https://tu-api.example/login
-VITE_CONTACT_EMAIL=contacto@tu-dominio.example
-VITE_NEWSLETTER_ENDPOINT=https://tu-api.example/newsletter
-VITE_TERMS_URL=https://tu-dominio.example/terminos
-VITE_PRIVACY_URL=https://tu-dominio.example/privacidad
-VITE_CONTACT_FORM_ENDPOINT=https://tu-api.example/contacto
-VITE_SOCIAL_GITHUB=https://github.com/tu-organizacion
-VITE_SOCIAL_X=https://x.com/tu-cuenta
-VITE_SOCIAL_DISCORD=https://discord.gg/tu-servidor
-VITE_SOCIAL_BLUESKY=https://bsky.app/profile/tu-cuenta
-```
-
-Estas URLs son ejemplos y no apuntan a servicios reales de RentBuild. Las variables `VITE_` son públicas en el navegador, así que no se deben incluir claves privadas o tokens sensibles.
-
-`VITE_LOGIN_URL` redirige de inmediato a una página de login externa al pulsar "Ingresar" en el navbar. Si no está configurada, se abre el diálogo con un formulario de inicio de sesión (correo y contraseña).
-
-`VITE_SIGNUP_URL` funciona igual para el botón "Registrarse" y para elegir un plan: redirige a una página de registro externa. Sin esa variable, se abre el diálogo con un formulario de registro (nombre, correo, empresa/obra, teléfono y contraseña, con el plan seleccionado si aplica).
-
-Al enviar cualquiera de los dos formularios: si `VITE_LOGIN_ENDPOINT`/`VITE_SIGNUP_ENDPOINT` está definido, los datos se envían por `POST` a ese endpoint; si falla, se muestra un mensaje de error. En ambos casos (endpoint configurado con éxito, o sin endpoint configurado — modo demo), el usuario pasa directo al dashboard de bienvenida (`UserDashboard.vue`) con datos ficticios, ya que todavía no existe backend real de autenticación. La sesión demo se guarda en `sessionStorage` y se cierra con el botón "Cerrar sesión" o al cerrar la pestaña.
-
-## Estado actual
-
-La landing page ya incluye la estructura visual, textos, traducciones y comportamiento base de la experiencia. Los servicios reales para registro, acceso y suscripción no están conectados todavía. El newsletter y el formulario de contacto muestran mensajes informativos cuando no existe un endpoint válido; el login y el registro, al no depender de una cuenta real, avanzan directo a un dashboard de bienvenida en modo demo.
-
-## Diseño y contenido
-
-El sitio está orientado a presentar RentBuild como una solución de control operativo para maquinaria y alquileres. Se usaron referencias visuales para construir la composición general, manteniendo los textos y módulos HTML reales en vez de depender de imágenes con texto embebido.
-
-Los colores principales, la tipografía y la arquitectura de secciones están pensados para transmitir confianza, claridad y sentido de operación profesional.
-
-## Verificación
-
-Se validó que el proyecto compila correctamente con:
-
-```bash
-npm run build
-```
-
-La UI se ha desarrollado y ajustado para que funcione en distintos anchos de pantalla y con los principales flujos de interacción del landing page.
-
-## Repositorio
+## Project Structure
 
 ```text
-https://github.com/upc-pre-202620-1asi0730-8093-dataflux/dataflux-landing-page
-```
-
-Este proyecto está pensado para evolucionar con imágenes reales, videos productivos y servicios de backend en etapas posteriores.
+dataflux-landing-page/
+│
+├── assets/
+│   ├── images/
+│   │   ├── references/
+│   │   └── team/
+│   ├── icons/
+│   └── videos/
+│
+├── css/
+│   ├── components.css
+│   ├── layout.css
+│   ├── reset.css
+│   ├── responsive.css
+│   ├── styles.css
+│   └── variables.css
+│
+├── js/
+│   ├── main.js
+│   └── translations.js
+│
+├── index.html
+└── README.md
