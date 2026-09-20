@@ -698,3 +698,265 @@ billingButtons.forEach(button => {
     );
 
 });
+
+/* ========================================
+   CONTACT FORM
+   ======================================== */
+
+/*
+    Leave empty while no backend/form
+    service has been configured.
+
+    Example:
+    const CONTACT_FORM_ENDPOINT =
+        "https://example.com/api/contact";
+*/
+
+const CONTACT_FORM_ENDPOINT = "";
+
+
+const contactForm =
+    document.querySelector(
+        "#contact-form"
+    );
+
+const contactSubmitButton =
+    document.querySelector(
+        "#contact-submit"
+    );
+
+const contactStatus =
+    document.querySelector(
+        "#contact-status"
+    );
+
+
+function setContactStatus(status) {
+
+    if (!contactStatus) {
+        return;
+    }
+
+
+    if (!status) {
+
+        contactStatus.textContent = "";
+
+        delete contactStatus.dataset.i18n;
+
+        return;
+    }
+
+
+    const translationKey =
+        `contact.${status}`;
+
+
+    contactStatus.dataset.i18n =
+        translationKey;
+
+
+    const translatedText =
+        getTranslation(
+            currentLanguage,
+            translationKey
+        );
+
+
+    if (translatedText !== undefined) {
+
+        contactStatus.textContent =
+            translatedText;
+
+    }
+
+}
+
+
+function setContactSubmitting(
+    isSubmitting
+) {
+
+    if (!contactForm) {
+        return;
+    }
+
+
+    const controls =
+        contactForm.querySelectorAll(
+            "input, textarea, button"
+        );
+
+
+    controls.forEach(control => {
+
+        control.disabled =
+            isSubmitting;
+
+    });
+
+
+    if (!contactSubmitButton) {
+        return;
+    }
+
+
+    const translationKey =
+        isSubmitting
+            ? "contact.sending"
+            : "contact.send";
+
+
+    contactSubmitButton.dataset.i18n =
+        translationKey;
+
+
+    const translatedText =
+        getTranslation(
+            currentLanguage,
+            translationKey
+        );
+
+
+    if (translatedText !== undefined) {
+
+        contactSubmitButton.textContent =
+            translatedText;
+
+    }
+
+}
+
+
+if (contactForm) {
+
+    contactForm.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+
+            setContactStatus("");
+
+
+            /*
+                Same behavior as the
+                original Vue component:
+                without an endpoint,
+                nothing is sent or saved.
+            */
+
+            if (!CONTACT_FORM_ENDPOINT) {
+
+                setContactStatus(
+                    "unavailable"
+                );
+
+                return;
+            }
+
+
+            setContactSubmitting(true);
+
+
+            const formData =
+                new FormData(
+                    contactForm
+                );
+
+
+            const payload = {
+
+                name:
+                    formData.get("name"),
+
+                email:
+                    formData.get("email"),
+
+                message:
+                    formData.get("message")
+
+            };
+
+
+            const controller =
+                new AbortController();
+
+
+            const timeout =
+                setTimeout(
+                    () =>
+                        controller.abort(),
+                    10000
+                );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        CONTACT_FORM_ENDPOINT,
+                        {
+
+                            method:
+                                "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    payload
+                                ),
+
+                            signal:
+                            controller.signal
+
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Message was not accepted"
+                    );
+
+                }
+
+
+                setContactStatus(
+                    "success"
+                );
+
+
+                contactForm.reset();
+
+
+            } catch {
+
+                setContactStatus(
+                    "error"
+                );
+
+
+            } finally {
+
+                clearTimeout(
+                    timeout
+                );
+
+
+                setContactSubmitting(
+                    false
+                );
+
+            }
+
+        }
+    );
+
+}

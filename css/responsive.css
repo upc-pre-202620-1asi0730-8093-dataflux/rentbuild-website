@@ -592,6 +592,20 @@
         font-size: 16px;
     }
 
+    .contact {
+        padding-block: 58px;
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .contact-form {
+        padding: 26px;
+    }
+
 
 }
 

@@ -1767,12 +1767,120 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section
             id="contact"
-            class="contact"
+            class="contact section"
+            aria-labelledby="contact-title"
     >
-        <!-- Contact form will be migrated here -->
+        <div class="container contact__grid">
+
+            <div class="contact__intro">
+
+                <h2
+                        id="contact-title"
+                        data-i18n="contact.title"
+                >
+                    Contact us
+                </h2>
+
+                <p
+                        class="section-copy"
+                        data-i18n="contact.body"
+                >
+                    Have questions about RentBuild?
+                    Write to us and we'll get back to you shortly.
+                </p>
+
+            </div>
+
+
+            <form
+                    id="contact-form"
+                    class="contact-form"
+            >
+
+                <div class="contact-form__row">
+
+                    <label
+                            for="contact-name"
+                            data-i18n="contact.name"
+                    >
+                        Full name
+                    </label>
+
+                    <input
+                            id="contact-name"
+                            type="text"
+                            name="name"
+                            autocomplete="name"
+                            required
+                            maxlength="120"
+                    >
+
+                </div>
+
+
+                <div class="contact-form__row">
+
+                    <label
+                            for="contact-email"
+                            data-i18n="contact.email"
+                    >
+                        Email address
+                    </label>
+
+                    <input
+                            id="contact-email"
+                            type="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            maxlength="254"
+                    >
+
+                </div>
+
+
+                <div class="contact-form__row">
+
+                    <label
+                            for="contact-message"
+                            data-i18n="contact.message"
+                    >
+                        Message
+                    </label>
+
+                    <textarea
+                            id="contact-message"
+                            name="message"
+                            rows="5"
+                            required
+                            maxlength="2000"
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                        id="contact-submit"
+                        type="submit"
+                        class="btn"
+                        data-i18n="contact.send"
+                >
+                    Send message
+                </button>
+
+
+                <p
+                        id="contact-status"
+                        class="contact-form__status"
+                        role="status"
+                        aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
     </section>
 
 </main>

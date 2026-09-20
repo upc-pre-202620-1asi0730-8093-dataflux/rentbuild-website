@@ -350,6 +350,43 @@ const translations = {
                     "Select Premium"
             }
 
+
+        },
+        contact: {
+
+            title:
+                "Contact us",
+
+            body:
+                "Have questions about RentBuild? Write to us and we'll get back to you shortly.",
+
+            name:
+                "Full name",
+
+            email:
+                "Email address",
+
+            message:
+                "Message",
+
+            send:
+                "Send message",
+
+            sending:
+                "Sending…",
+
+            success:
+                "Thank you! We received your message and will get back to you soon.",
+
+            error:
+                "We couldn't send your message. Please try again later.",
+
+            unavailable:
+                "This form is coming soon. Your message has not been sent or saved.",
+
+            social:
+                "RentBuild social media"
+
         }
 
     },
@@ -704,6 +741,42 @@ const translations = {
                 cta:
                     "Elegir Premium"
             }
+
+        },
+        contact: {
+
+            title:
+                "Contáctanos",
+
+            body:
+                "¿Tienes preguntas sobre RentBuild? Escríbenos y te responderemos a la brevedad.",
+
+            name:
+                "Nombre completo",
+
+            email:
+                "Correo electrónico",
+
+            message:
+                "Mensaje",
+
+            send:
+                "Enviar mensaje",
+
+            sending:
+                "Enviando…",
+
+            success:
+                "¡Gracias! Recibimos tu mensaje y te responderemos pronto.",
+
+            error:
+                "No pudimos enviar tu mensaje. Vuelve a intentarlo más tarde.",
+
+            unavailable:
+                "El formulario estará disponible pronto. Tu mensaje no se ha enviado ni guardado.",
+
+            social:
+                "Redes sociales de RentBuild"
 
         }
 
