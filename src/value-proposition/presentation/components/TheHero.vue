@@ -12,7 +12,7 @@ const icons = ['▦', '▣', '▤', '⚒', '◉']
       <div class="hero__copy">
         <h1 id="hero-title">{{ t('hero.title') }}</h1>
         <p>{{ t('hero.body') }}</p>
-        <button class="btn" @click="$emit('access')">{{ t('nav.signup') }}</button>
+        <a class="btn" href="https://dataflux-webapp.vercel.app/iam/sign-up">{{ t('nav.signup') }}</a>
       </div>
       <div class="hero__visual" aria-hidden="true">
         <div class="hero-art">
