@@ -108,49 +108,45 @@
     "soon": "Video coming soon"
   },
   "pricing": {
-    "title": "Plans that grow\nwith your business",
-    "body": "Choose the features you need to manage your equipment with RentBuild.",
-    "billing": "Billing period",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "popular": "Most popular",
-    "monthlyNote": "Monthly billing selected. Contact us for pricing.",
-    "annualNote": "Annual billing selected. Contact us for pricing.",
-    "basic": {
-      "name": "Basic",
-      "body": "Essential functions to\nget started",
-      "features": [
-        "Team management",
-        "Reservations",
-        "Rentals and returns",
-        "Customers",
-        "Standard support"
-      ],
-      "cta": "Select Basic"
+    "title": "Demo plans\nfor your company",
+    "body": "The same monthly reference catalogue used by the subscription demo.",
+    "demoNotice": "Academic demo: the listed capabilities describe proposed scope. Selecting a plan here does not process payments or activate commercial access.",
+    "monthly": "Monthly demo",
+    "perMonth": "/ month",
+    "referenceFeatures": "Reference capabilities (proposed scope)",
+    "monthlyNote": "Reference values in PEN for a demo month. These cards open application access; they do not create a subscription, charge a payment or unlock commercial features.",
+    "popular": "Recommended",
+    "essential": {
+      "name": "Essential",
+      "body": "Start organizing your equipment and reservation requests.",
+      "features": {
+        "inventory": "Equipment inventory registration and management.",
+        "availability": "Equipment condition and availability tracking.",
+        "requests": "Reservation request management."
+      },
+      "cta": "View Essential in the demo"
     },
-    "pro": {
-      "name": "Pro",
-      "body": "Complete control of the\noperation",
-      "features": [
-        "Everything included in the Basic plan",
-        "Maintenance",
-        "Operational reports",
-        "Alerts and monitoring",
-        "More users"
-      ],
-      "cta": "Choose Pro"
+    "professional": {
+      "name": "Professional",
+      "body": "Centralize your company's day-to-day rental operations.",
+      "features": {
+        "essential": "Everything included in Essential.",
+        "rentals": "Rental and contract management.",
+        "payments": "Rental payment records.",
+        "delivery-return": "Delivery and return records."
+      },
+      "cta": "View Professional in the demo"
     },
-    "premium": {
-      "name": "Premium",
-      "body": "Your most complete view of equipment, rentals, and maintenance.",
-      "features": [
-        "Everything included in Pro",
-        "Extended equipment history",
-        "Weekly and monthly usage comparisons",
-        "Preventive maintenance planning",
-        "Detailed progress reports with PDF export"
-      ],
-      "cta": "Select Premium"
+    "growth": {
+      "name": "Growth",
+      "body": "Expand your operational oversight and manage equipment maintenance.",
+      "features": {
+        "professional": "Everything included in Professional.",
+        "incidents": "Incident and inspection records.",
+        "scheduling": "Equipment maintenance scheduling.",
+        "history": "Maintenance history for each piece of equipment."
+      },
+      "cta": "View Growth in the demo"
     }
   },
   "contact": {
@@ -298,12 +294,42 @@
         "reserved": "Reserved"
       },
       "items": {
-        "excavator": { "name": "Excavator 01", "category": "Excavators", "description": "Compact hydraulic excavator suited for trenching and site prep on tight job sites.", "location": "Yard A - Site 12" },
-        "crane": { "name": "Tower Crane 02", "category": "Cranes", "description": "Fixed tower crane for mid-rise construction and material lifting.", "location": "Site 7 - Downtown" },
-        "compactor": { "name": "Compactor 03", "category": "Compaction", "description": "Vibratory roller compactor for soil and asphalt compaction.", "location": "Warehouse B" },
-        "generator": { "name": "Generator 04", "category": "Generators", "description": "Diesel generator providing backup power for job sites and equipment.", "location": "Warehouse A" },
-        "loader": { "name": "Front Loader 05", "category": "Loaders", "description": "Front-end loader for moving and loading bulk materials.", "location": "Site 3 - North Yard" },
-        "mixer": { "name": "Concrete Mixer 06", "category": "Concrete", "description": "Portable concrete mixer for on-site batching.", "location": "Warehouse C" }
+        "excavator": {
+          "name": "Excavator 01",
+          "category": "Excavators",
+          "description": "Compact hydraulic excavator suited for trenching and site prep on tight job sites.",
+          "location": "Yard A - Site 12"
+        },
+        "crane": {
+          "name": "Tower Crane 02",
+          "category": "Cranes",
+          "description": "Fixed tower crane for mid-rise construction and material lifting.",
+          "location": "Site 7 - Downtown"
+        },
+        "compactor": {
+          "name": "Compactor 03",
+          "category": "Compaction",
+          "description": "Vibratory roller compactor for soil and asphalt compaction.",
+          "location": "Warehouse B"
+        },
+        "generator": {
+          "name": "Generator 04",
+          "category": "Generators",
+          "description": "Diesel generator providing backup power for job sites and equipment.",
+          "location": "Warehouse A"
+        },
+        "loader": {
+          "name": "Front Loader 05",
+          "category": "Loaders",
+          "description": "Front-end loader for moving and loading bulk materials.",
+          "location": "Site 3 - North Yard"
+        },
+        "mixer": {
+          "name": "Concrete Mixer 06",
+          "category": "Concrete",
+          "description": "Portable concrete mixer for on-site batching.",
+          "location": "Warehouse C"
+        }
       },
       "detail": {
         "availability": "{available} of {total} units available",
