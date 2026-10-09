@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BrandLogo from './BrandLogo.vue'
-defineEmits(['access'])
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const baseUrl = import.meta.env.BASE_URL
 const email = ref('')
 const status = ref('')
 const submitting = ref(false)
@@ -61,9 +61,9 @@ async function subscribe() {
       <div class="site-footer__bottom">
         <span>© {{ new Date().getFullYear() }} RentBuild · DataFlux</span>
         <div>
-          <button @click="$emit('access', { mode: 'legal', document: 'terms' })">{{ t('footer.terms') }}</button>
+          <a :href="`${baseUrl}?document=terms&lang=${locale}`">{{ t('footer.terms') }}</a>
           <span aria-hidden="true">·</span>
-          <button @click="$emit('access', { mode: 'legal', document: 'privacy' })">{{ t('footer.privacy') }}</button>
+          <a :href="`${baseUrl}?document=privacy&lang=${locale}`">{{ t('footer.privacy') }}</a>
         </div>
       </div>
     </div>

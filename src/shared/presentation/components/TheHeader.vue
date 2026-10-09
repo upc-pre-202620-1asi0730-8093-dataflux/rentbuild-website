@@ -1,9 +1,10 @@
 <script setup>
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BrandLogo from './BrandLogo.vue'
+import { toggleLocale } from '../../language.js'
 
-defineEmits(['access'])
+const emit = defineEmits(['access'])
 const { t, locale } = useI18n()
 const menuOpen = ref(false)
 const links = [ ['how-it-works', 'how'], ['features', 'teams'], ['plans', 'plans'], ['our-team', 'team'], ['contact', 'contact'] ]
@@ -11,10 +12,11 @@ const activeSection = ref('home')
 let observer
 const menuButton = ref(null)
 
-watch(locale, (value) => {
-  document.documentElement.lang = value
-  try { localStorage.setItem('rentbuild-language', value) } catch { /* Optional persistence. */ }
-})
+function requestAccess(detail = {}) {
+  const returnFocus = menuOpen.value ? menuButton.value : document.activeElement
+  menuOpen.value = false
+  emit('access', { ...detail, returnFocus })
+}
 function closeMenu(event) {
   if (event.key === 'Escape' && menuOpen.value) {
     menuOpen.value = false
@@ -51,13 +53,13 @@ onBeforeUnmount(() => {
           </li>
         </ul>
         <div class="navbar__actions">
-          <button class="text-button" @click="menuOpen = false; $emit('access', { mode: 'login' })">{{ t('nav.login') }}</button>
-          <button class="btn btn--small" @click="menuOpen = false; $emit('access')">{{ t('nav.signup') }}</button>
+          <button class="text-button" @click="requestAccess({ mode: 'login' })">{{ t('nav.login') }}</button>
+          <button class="btn btn--small" @click="requestAccess()">{{ t('nav.signup') }}</button>
           <button class="language-switch" type="button" :aria-label="t('nav.language')"
-            @click="locale = locale === 'en' ? 'es' : 'en'">
-            <span :class="{ 'is-active': locale === 'en' }">EN</span>
-            <span class="language-switch__track" :class="{ 'is-spanish': locale === 'es' }"><span></span></span>
-            <span :class="{ 'is-active': locale === 'es' }">ES</span>
+            @click="locale = toggleLocale(locale)">
+            <span :class="{ 'is-active': locale === 'en-US' }">EN</span>
+            <span class="language-switch__track" :class="{ 'is-spanish': locale === 'es-419' }"><span></span></span>
+            <span :class="{ 'is-active': locale === 'es-419' }">ES</span>
           </button>
         </div>
       </div>
