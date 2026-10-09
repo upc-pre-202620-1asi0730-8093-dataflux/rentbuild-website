@@ -1,19 +1,27 @@
 import { createI18n } from 'vue-i18n'
+import { watch } from 'vue'
 import en from './locales/en.json'
 import es from './locales/es.json'
+import { normalizeLocale, resolveInitialLocale } from './shared/language.js'
 
-let locale = 'en'
-try {
-  const saved = localStorage.getItem('rentbuild-language')
-  if (saved === 'en' || saved === 'es') locale = saved
-} catch {
-  // Language selection still works when browser storage is unavailable.
-}
+const locale = resolveInitialLocale({
+  search: window.location.search,
+  readPreference: () => localStorage.getItem('rentbuild-language'),
+})
 document.documentElement.lang = locale
 
-export default createI18n({
+const i18n = createI18n({
   legacy: false,
   locale,
-  fallbackLocale: 'en',
-  messages: { en, es },
+  fallbackLocale: 'en-US',
+  messages: { 'en-US': en, 'es-419': es },
 })
+
+watch(i18n.global.locale, (value) => {
+  const canonical = normalizeLocale(value) || 'en-US'
+  if (value !== canonical) { i18n.global.locale.value = canonical; return }
+  document.documentElement.lang = canonical
+  try { localStorage.setItem('rentbuild-language', canonical) } catch { /* Optional persistence. */ }
+})
+
+export default i18n

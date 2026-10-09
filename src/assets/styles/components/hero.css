@@ -20,10 +20,10 @@
   font-weight: 500;
 }
 .hero__copy .btn {
-  margin-top: 35px;
   min-width: 156px;
   min-height: 59px;
 }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 35px; }
 .hero__visual {
   width: calc(100% + 28px);
   margin-right: -28px;
