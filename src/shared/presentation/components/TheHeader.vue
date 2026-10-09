@@ -51,8 +51,10 @@ onBeforeUnmount(() => {
           </li>
         </ul>
         <div class="navbar__actions">
-          <button class="text-button" @click="menuOpen = false; $emit('access', { mode: 'login' })">{{ t('nav.login') }}</button>
-          <button class="btn btn--small" @click="menuOpen = false; $emit('access')">{{ t('nav.signup') }}</button>
+          <a class="text-button" href="https://dataflux-webapp.vercel.app/iam/sign-in"
+            @click="menuOpen = false">{{ t('nav.login') }}</a>
+          <a class="btn btn--small" href="https://dataflux-webapp.vercel.app/iam/sign-up"
+            @click="menuOpen = false">{{ t('nav.signup') }}</a>
           <button class="language-switch" type="button" :aria-label="t('nav.language')"
             @click="locale = locale === 'en' ? 'es' : 'en'">
             <span :class="{ 'is-active': locale === 'en' }">EN</span>
