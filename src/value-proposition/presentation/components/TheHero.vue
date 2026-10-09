@@ -1,9 +1,11 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import ReferenceArtwork from '../../../shared/presentation/components/ReferenceArtwork.vue'
+import { createFrontendLink, frontendRoles } from '../../../shared/frontend-links.js'
 defineEmits(['access'])
 const { t } = useI18n()
 const icons = ['▦', '▣', '▤', '⚒', '◉']
+const links = frontendRoles.map((role) => ({ role, href: createFrontendLink(import.meta.env.VITE_FRONTEND_URL, { role }) }))
 </script>
 
 <template>
@@ -12,7 +14,12 @@ const icons = ['▦', '▣', '▤', '⚒', '◉']
       <div class="hero__copy">
         <h1 id="hero-title">{{ t('hero.title') }}</h1>
         <p>{{ t('hero.body') }}</p>
-        <button class="btn" @click="$emit('access')">{{ t('nav.signup') }}</button>
+        <div class="hero__actions">
+          <template v-for="link in links" :key="link.role">
+            <a v-if="link.href" class="btn" :href="link.href">{{ t(`frontend.${link.role}`) }}</a>
+            <button v-else class="btn" @click="$emit('access', { role: link.role })">{{ t(`frontend.${link.role}`) }}</button>
+          </template>
+        </div>
       </div>
       <div class="hero__visual" aria-hidden="true">
         <div class="hero-art">

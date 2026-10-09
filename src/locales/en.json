@@ -1,4 +1,39 @@
 {
+  "frontend": {
+    "demo": "Academic demonstration",
+    "title": "Choose how you use RentBuild",
+    "loginTitle": "Access the demo application",
+    "description": "Open the separate demo application for your company. It uses simulated data for the course project.",
+    "unavailable": "This version does not have the demo application linked yet. You can keep exploring the project; no account is created here.",
+    "invalid": "The configured demo application address is invalid. Access is unavailable until it is corrected; no account is created here.",
+    "construction_company": "Rent equipment",
+    "rental_company": "Manage my rental fleet"
+  },
+  "legal": {
+    "navigation": "Document navigation",
+    "back": "Back to the landing page",
+    "updated": "Academic version · Updated 8 October 2026",
+    "terms": {
+      "title": "Terms of the academic demo",
+      "intro": "RentBuild is a university project developed by DataFlux for the Web Applications course. This landing page presents the proposal and links to a demonstration application when its address is configured.",
+      "sections": [
+        { "title": "Purpose and scope", "body": "The screens, equipment, plans and prices illustrate the project. This version does not offer a commercial rental service, reserve real equipment, process payments or create rental contracts. A displayed result in the demo is not confirmation of a real transaction." },
+        { "title": "Access to the application", "body": "The construction-company and rental-company buttons identify the intended segment when opening the separate application. This selection is a form preference and does not grant permissions. Login and registration take place there, not on this landing page. If the application is not linked, the landing displays a notice and does not create an account or simulate a successful login." },
+        { "title": "Demonstration data", "body": "Use fictional company details and demonstration accounts. The application currently uses a fake API for academic testing; its records and availability do not establish the state of real equipment. Data may be reset during development or redeployment." },
+        { "title": "Forms and external services", "body": "Contact and newsletter forms only send information if their respective endpoint is configured. Otherwise, they display an unavailable notice. Following an external application, email or social link leaves this landing page; the destination handles that interaction." }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy notice for the academic demo",
+      "intro": "This notice describes the behavior implemented in this version of the RentBuild landing page. Use fictional information when testing the project.",
+      "sections": [
+        { "title": "Language preference", "body": "The EN/ES switch can save the selected language in your browser's localStorage under rentbuild-language. This preference stays in that browser. You can remove it through the browser's site-data settings. A document link can also select its language through the lang query parameter." },
+        { "title": "Contact and newsletter forms", "body": "The contact form holds the name, email and message you enter; the newsletter holds your email. These values remain in the page while you fill in the form. When an endpoint is configured and you submit, the landing sends those fields to it by POST. Without an endpoint, no form information is sent and an unavailable notice appears. This landing does not define storage or retention at a future external endpoint." },
+        { "title": "Application access", "body": "This landing does not request login passwords or store an authenticated user session. Segment buttons send a role query parameter to the configured application address. The separate demo application and its fake API handle any registration, session and demonstration records there." },
+        { "title": "External requests", "body": "The page loads fonts from Google Fonts and files from the site host. Your browser makes requests to those providers. Configured email and social links open their respective destinations. This notice does not claim a retention period or privacy policy for those external services." }
+      ]
+    }
+  },
   "nav": {
     "skip": "Skip to content",
     "label": "Main navigation",
@@ -108,49 +143,45 @@
     "soon": "Video coming soon"
   },
   "pricing": {
-    "title": "Plans that grow\nwith your business",
-    "body": "Choose the features you need to manage your equipment with RentBuild.",
-    "billing": "Billing period",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "popular": "Most popular",
-    "monthlyNote": "Monthly billing selected. Contact us for pricing.",
-    "annualNote": "Annual billing selected. Contact us for pricing.",
-    "basic": {
-      "name": "Basic",
-      "body": "Essential functions to\nget started",
-      "features": [
-        "Team management",
-        "Reservations",
-        "Rentals and returns",
-        "Customers",
-        "Standard support"
-      ],
-      "cta": "Select Basic"
+    "title": "Demo plans\nfor your company",
+    "body": "The same monthly reference catalogue used by the subscription demo.",
+    "demoNotice": "Academic demo: the listed capabilities describe proposed scope. Selecting a plan here does not process payments or activate commercial access.",
+    "monthly": "Monthly demo",
+    "perMonth": "/ month",
+    "referenceFeatures": "Reference capabilities (proposed scope)",
+    "monthlyNote": "Reference values in PEN for a demo month. These cards open application access; they do not create a subscription, charge a payment or unlock commercial features.",
+    "popular": "Recommended",
+    "essential": {
+      "name": "Essential",
+      "body": "Start organizing your equipment and reservation requests.",
+      "features": {
+        "inventory": "Equipment inventory registration and management.",
+        "availability": "Equipment condition and availability tracking.",
+        "requests": "Reservation request management."
+      },
+      "cta": "View Essential in the demo"
     },
-    "pro": {
-      "name": "Pro",
-      "body": "Complete control of the\noperation",
-      "features": [
-        "Everything included in the Basic plan",
-        "Maintenance",
-        "Operational reports",
-        "Alerts and monitoring",
-        "More users"
-      ],
-      "cta": "Choose Pro"
+    "professional": {
+      "name": "Professional",
+      "body": "Centralize your company's day-to-day rental operations.",
+      "features": {
+        "essential": "Everything included in Essential.",
+        "rentals": "Rental and contract management.",
+        "payments": "Rental payment records.",
+        "delivery-return": "Delivery and return records."
+      },
+      "cta": "View Professional in the demo"
     },
-    "premium": {
-      "name": "Premium",
-      "body": "Your most complete view of equipment, rentals, and maintenance.",
-      "features": [
-        "Everything included in Pro",
-        "Extended equipment history",
-        "Weekly and monthly usage comparisons",
-        "Preventive maintenance planning",
-        "Detailed progress reports with PDF export"
-      ],
-      "cta": "Select Premium"
+    "growth": {
+      "name": "Growth",
+      "body": "Expand your operational oversight and manage equipment maintenance.",
+      "features": {
+        "professional": "Everything included in Professional.",
+        "incidents": "Incident and inspection records.",
+        "scheduling": "Equipment maintenance scheduling.",
+        "history": "Maintenance history for each piece of equipment."
+      },
+      "cta": "View Growth in the demo"
     }
   },
   "contact": {
@@ -205,7 +236,7 @@
     "error": "We couldn't send your request. Please try again later.",
     "unavailable": "Subscriptions are coming soon. Your email has not been sent or saved.",
     "terms": "Terms and Conditions",
-    "privacy": "Privacy Policy",
+    "privacy": "Privacy notice",
     "columns": [
       {
         "title": "Support",

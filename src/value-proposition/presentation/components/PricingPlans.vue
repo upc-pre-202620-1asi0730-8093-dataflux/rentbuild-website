@@ -1,10 +1,10 @@
 <script setup>
-import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import PricingCard from './PricingCard.vue'
+import { referencePlans } from '../../reference-plans.js'
+
 defineEmits(['access'])
 const { t } = useI18n()
-const period = ref('annual')
 </script>
 
 <template>
@@ -13,16 +13,16 @@ const period = ref('annual')
       <header class="pricing__header">
         <h2 id="pricing-title">{{ t('pricing.title') }}</h2>
         <p class="section-copy">{{ t('pricing.body') }}</p>
-        <div class="billing-switch" role="group" :aria-label="t('pricing.billing')">
-          <button v-for="value in ['monthly', 'annual']" :key="value" :aria-pressed="period === value"
-            :class="{ 'is-active': period === value }" @click="period = value">{{ t(`pricing.${value}`) }}</button>
+        <p class="section-copy">{{ t('pricing.demoNotice') }}</p>
+        <div class="billing-switch">
+          <span class="billing-switch__label">{{ t('pricing.monthly') }}</span>
         </div>
       </header>
       <div class="pricing__grid">
-        <PricingCard v-for="plan in ['basic', 'pro', 'premium']" :key="plan" :plan="plan" :featured="plan === 'pro'"
-          :period="period" @select="$emit('access', $event)" />
+        <PricingCard v-for="plan in referencePlans" :key="plan.id" :plan="plan" :featured="plan.id === 2"
+          @select="$emit('access', $event)" />
       </div>
-      <p class="pricing__period" aria-live="polite">{{ t(`pricing.${period}Note`) }}</p>
+      <p class="pricing__period">{{ t('pricing.monthlyNote') }}</p>
     </div>
   </section>
 </template>

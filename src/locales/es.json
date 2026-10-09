@@ -1,4 +1,39 @@
 {
+  "frontend": {
+    "demo": "Demostración académica",
+    "title": "Elige cómo usas RentBuild",
+    "loginTitle": "Accede a la aplicación de demostración",
+    "description": "Abre la aplicación de demostración para tu empresa. Utiliza datos simulados para el proyecto del curso.",
+    "unavailable": "Esta versión todavía no tiene enlazada la aplicación de demostración. Puedes seguir explorando el proyecto; aquí no se crea una cuenta.",
+    "invalid": "La dirección configurada de la aplicación de demostración no es válida. El acceso estará disponible cuando se corrija; aquí no se crea una cuenta.",
+    "construction_company": "Alquilar maquinaria",
+    "rental_company": "Gestionar mi flota de alquiler"
+  },
+  "legal": {
+    "navigation": "Navegación de documentos",
+    "back": "Volver a la landing page",
+    "updated": "Versión académica · Actualizado el 8 de octubre de 2026",
+    "terms": {
+      "title": "Términos de la demostración académica",
+      "intro": "RentBuild es un proyecto universitario desarrollado por DataFlux para el curso de Aplicaciones Web. Esta landing presenta la propuesta y enlaza una aplicación de demostración cuando se configura su dirección.",
+      "sections": [
+        { "title": "Propósito y alcance", "body": "Las pantallas, maquinaria, planes y precios ilustran el proyecto. Esta versión no ofrece un servicio comercial de alquiler, reserva maquinaria real, procesa pagos ni crea contratos de alquiler. Un resultado mostrado en la demostración no confirma una transacción real." },
+        { "title": "Acceso a la aplicación", "body": "Los botones para empresas constructoras y empresas de alquiler identifican el segmento al abrir la aplicación separada. Esta selección es una preferencia del formulario y no concede permisos. El acceso y el registro se realizan allí, no en esta landing. Si la aplicación no está enlazada, la landing muestra un aviso y no crea una cuenta ni simula un inicio de sesión exitoso." },
+        { "title": "Datos de demostración", "body": "Utiliza datos ficticios de empresa y cuentas de demostración. La aplicación usa actualmente una fake API para pruebas académicas; sus registros y disponibilidad no acreditan el estado de maquinaria real. Los datos pueden reiniciarse durante el desarrollo o un nuevo despliegue." },
+        { "title": "Formularios y servicios externos", "body": "Los formularios de contacto y newsletter solo envían información si se configura su endpoint correspondiente. En caso contrario, muestran un aviso de servicio no disponible. Al seguir un enlace de aplicación, correo o red social se sale de esta landing; el destino gestiona esa interacción." }
+      ]
+    },
+    "privacy": {
+      "title": "Aviso de privacidad de la demostración académica",
+      "intro": "Este aviso describe el comportamiento implementado en esta versión de la landing de RentBuild. Utiliza información ficticia al probar el proyecto.",
+      "sections": [
+        { "title": "Preferencia de idioma", "body": "El selector EN/ES puede guardar el idioma elegido en el localStorage del navegador con la clave rentbuild-language. La preferencia permanece en ese navegador. Puedes eliminarla desde la configuración de datos del sitio. Un enlace de documento también puede seleccionar el idioma mediante el parámetro lang." },
+        { "title": "Formularios de contacto y newsletter", "body": "El formulario de contacto mantiene el nombre, correo y mensaje introducidos; el newsletter mantiene tu correo. Los valores permanecen en la página mientras completas el formulario. Si hay un endpoint configurado y envías el formulario, la landing le transmite esos campos por POST. Sin endpoint no se envía la información y aparece un aviso de servicio no disponible. Esta landing no define el almacenamiento o plazo de conservación de un futuro endpoint externo." },
+        { "title": "Acceso a la aplicación", "body": "Esta landing no solicita contraseñas de acceso ni guarda una sesión de usuario autenticado. Los botones por segmento envían un parámetro role a la dirección configurada de la aplicación. La aplicación separada y su fake API gestionan allí el registro, la sesión y los datos de demostración." },
+        { "title": "Solicitudes externas", "body": "La página carga fuentes de Google Fonts y archivos del proveedor de alojamiento. El navegador realiza solicitudes a esos proveedores. Los enlaces configurados de correo y redes sociales abren sus respectivos destinos. Este aviso no afirma un plazo de conservación ni una política de privacidad de esos servicios externos." }
+      ]
+    }
+  },
   "nav": {
     "skip": "Ir al contenido",
     "label": "Navegación principal",
@@ -108,49 +143,45 @@
     "soon": "Video próximamente"
   },
   "pricing": {
-    "title": "Planes que crecen\ncon tu negocio",
-    "body": "Elige las funciones que necesitas para gestionar tus equipos con RentBuild.",
-    "billing": "Período de facturación",
-    "monthly": "Mensual",
-    "annual": "Anual",
-    "popular": "Más popular",
-    "monthlyNote": "Facturación mensual seleccionada. Consulta los precios con nosotros.",
-    "annualNote": "Facturación anual seleccionada. Consulta los precios con nosotros.",
-    "basic": {
-      "name": "Básico",
-      "body": "Funciones esenciales\npara empezar",
-      "features": [
-        "Gestión de equipos",
-        "Reservas",
-        "Alquileres y devoluciones",
-        "Clientes",
-        "Soporte estándar"
-      ],
-      "cta": "Elegir Básico"
+    "title": "Planes de demo\npara tu empresa",
+    "body": "El mismo catálogo mensual de referencia de la demo de suscripciones.",
+    "demoNotice": "Demo académica: las características indicadas describen el alcance propuesto. Elegir un plan aquí no procesa pagos ni activa acceso comercial.",
+    "monthly": "Demo mensual",
+    "perMonth": "/ mes",
+    "referenceFeatures": "Características de referencia (alcance propuesto)",
+    "monthlyNote": "Valores de referencia en PEN para un mes de demo. Estas tarjetas abren el acceso a la aplicación; no crean una suscripción, cobran un pago ni habilitan funciones comerciales.",
+    "popular": "Recomendado",
+    "essential": {
+      "name": "Esencial",
+      "body": "Para comenzar a organizar tus equipos y solicitudes de reserva.",
+      "features": {
+        "inventory": "Registro y gestión del inventario de equipos.",
+        "availability": "Consulta del estado y la disponibilidad de equipos.",
+        "requests": "Gestión de solicitudes de reserva."
+      },
+      "cta": "Ver Esencial en la demo"
     },
-    "pro": {
-      "name": "Pro",
-      "body": "Control completo\nde la operación",
-      "features": [
-        "Todo lo incluido en el plan Básico",
-        "Mantenimiento",
-        "Reportes operativos",
-        "Alertas y monitoreo",
-        "Más usuarios"
-      ],
-      "cta": "Elegir Pro"
+    "professional": {
+      "name": "Profesional",
+      "body": "Para centralizar las operaciones diarias de alquiler de tu empresa.",
+      "features": {
+        "essential": "Todo lo incluido en Esencial.",
+        "rentals": "Gestión de alquileres y contratos.",
+        "payments": "Registro de pagos de los alquileres.",
+        "delivery-return": "Registro de entregas y devoluciones."
+      },
+      "cta": "Ver Profesional en la demo"
     },
-    "premium": {
-      "name": "Premium",
-      "body": "La visión más completa de tus equipos, alquileres y mantenimiento.",
-      "features": [
-        "Todo lo incluido en Pro",
-        "Historial ampliado de equipos",
-        "Comparaciones de uso semanales y mensuales",
-        "Planificación de mantenimiento preventivo",
-        "Reportes detallados con exportación a PDF"
-      ],
-      "cta": "Elegir Premium"
+    "growth": {
+      "name": "Crecimiento",
+      "body": "Para ampliar el control operativo y gestionar el mantenimiento de tus equipos.",
+      "features": {
+        "professional": "Todo lo incluido en Profesional.",
+        "incidents": "Registro de incidencias e inspecciones.",
+        "scheduling": "Programación del mantenimiento de equipos.",
+        "history": "Historial de mantenimiento por equipo."
+      },
+      "cta": "Ver Crecimiento en la demo"
     }
   },
   "contact": {
@@ -205,7 +236,7 @@
     "error": "No pudimos enviar tu solicitud. Vuelve a intentarlo más tarde.",
     "unavailable": "Las suscripciones estarán disponibles pronto. Tu correo no se ha enviado ni guardado.",
     "terms": "Términos y condiciones",
-    "privacy": "Política de privacidad",
+    "privacy": "Aviso de privacidad",
     "columns": [
       {
         "title": "Soporte",

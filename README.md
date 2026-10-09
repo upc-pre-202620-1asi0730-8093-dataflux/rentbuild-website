@@ -1,6 +1,6 @@
 # RentBuild — DataFlux
 
-Landing page oficial de RentBuild, una plataforma inteligente para la gestión y control de alquileres de maquinaria en el sector construcción.
+Landing page del proyecto académico RentBuild, desarrollado por DataFlux para Aplicaciones Web. Presenta la propuesta de gestión y control de alquileres de maquinaria en el sector construcción.
 
 ## Sobre el producto
 
@@ -96,32 +96,29 @@ El resultado se genera en `dist/`.
 ## Funcionalidades principales
 
 - Navegación responsive con menú móvil y cierre con Escape.
-- Selector de idioma EN/ES con persistencia local cuando el navegador lo permite.
+- Selector EN/ES con idiomas canónicos `en-US`/`es-419`, aliases anteriores y persistencia local cuando el navegador lo permite. Sin preferencia guardada ni parámetro `lang` válido, el idioma inicial es inglés.
 - Secciones con anclas reales para cada bloque de contenido.
 - Acordeones accesibles y bloques de información reutilizables.
-- Selector de plan y período de facturación con confirmación visual.
+- Catálogo de planes de referencia TB1: Essential/Professional/Growth, PEN 79/149/249 por mes de demo, alineados con Subscriptions. Las características se identifican como alcance propuesto; las tarjetas abren el acceso y no suscriben, cobran ni habilitan límites comerciales.
 - Diálogo de acceso con bloqueo de scroll y restauración del foco.
 - Newsletter con validación de email, manejo de errores y tiempo de espera configurable.
 - Sección "Contáctanos" con formulario (nombre, correo y mensaje), correo directo y enlaces a redes sociales.
-- Inicio de sesión y registro con formularios propios (correo/contraseña y nombre/correo/contraseña), enlazados entre sí y con el plan seleccionado cuando corresponde.
-- Dashboard de bienvenida tras iniciar sesión o registrarse (modo demo mientras no hay backend), con pestañas de Perfil (solo lectura) e Inventario de maquinaria (equipo, categoría, estado y unidades con datos de ejemplo), cierre de sesión y persistencia durante la pestaña activa.
+- CTA para los dos segmentos: empresa constructora y empresa de alquiler. Con una URL configurada, abren el registro de la aplicación separada con el parámetro `role` correspondiente.
+- Acceso a la aplicación separada mediante su ruta de login; sin URL configurada se muestra un aviso, sin pedir contraseñas ni crear una sesión ficticia en la landing.
+- Términos y aviso de privacidad de la demo académica, en inglés y español, con enlaces locales compartibles y navegación por teclado.
 - Soporte para movimiento reducido y navegación por teclado.
 
-## Conectar servicios reales
+## Configurar la aplicación TB1 y servicios opcionales
 
 El proyecto está preparado para conectar endpoints reales usando variables de entorno con prefijo `VITE_`.
 
 Ejemplo:
 
 ```dotenv
-VITE_SIGNUP_URL=https://tu-aplicacion.example/registro
-VITE_SIGNUP_ENDPOINT=https://tu-api.example/registro
-VITE_LOGIN_URL=https://tu-aplicacion.example/login
-VITE_LOGIN_ENDPOINT=https://tu-api.example/login
+VITE_FRONTEND_URL=
+VITE_BASE_PATH=/
 VITE_CONTACT_EMAIL=contacto@tu-dominio.example
 VITE_NEWSLETTER_ENDPOINT=https://tu-api.example/newsletter
-VITE_TERMS_URL=https://tu-dominio.example/terminos
-VITE_PRIVACY_URL=https://tu-dominio.example/privacidad
 VITE_CONTACT_FORM_ENDPOINT=https://tu-api.example/contacto
 VITE_SOCIAL_GITHUB=https://github.com/tu-organizacion
 VITE_SOCIAL_X=https://x.com/tu-cuenta
@@ -131,15 +128,31 @@ VITE_SOCIAL_BLUESKY=https://bsky.app/profile/tu-cuenta
 
 Estas URLs son ejemplos y no apuntan a servicios reales de RentBuild. Las variables `VITE_` son públicas en el navegador, así que no se deben incluir claves privadas o tokens sensibles.
 
-`VITE_LOGIN_URL` redirige de inmediato a una página de login externa al pulsar "Ingresar" en el navbar. Si no está configurada, se abre el diálogo con un formulario de inicio de sesión (correo y contraseña).
+Configura `VITE_FRONTEND_URL` con la URL base **real y comprobada** del frontend, conservando su subdirectorio si existe. Debe ser una dirección absoluta HTTP/HTTPS; no debe ser una URL de login/registro ni contener credenciales. Los enlaces eliminan query parameters y fragments anteriores. No hay un destino público predeterminado. Una URL ausente o inválida muestra su propio aviso y no se imprime el valor de configuración.
 
-`VITE_SIGNUP_URL` funciona igual para el botón "Registrarse" y para elegir un plan: redirige a una página de registro externa. Sin esa variable, se abre el diálogo con un formulario de registro (nombre, correo, empresa/obra, teléfono y contraseña, con el plan seleccionado si aplica).
+Los CTA construyen `/iam/sign-up?role=construction_company` para empresas constructoras y `/iam/sign-up?role=rental_company` para empresas de alquiler. "Ingresar" abre `/iam/sign-in`. El botón genérico de registro y las tarjetas de plan permiten elegir segmento. La selección de un plan en la landing es ilustrativa y no crea una suscripción o pago, ni preselecciona un plan en la aplicación.
 
-Al enviar cualquiera de los dos formularios: si `VITE_LOGIN_ENDPOINT`/`VITE_SIGNUP_ENDPOINT` está definido, los datos se envían por `POST` a ese endpoint; si falla, se muestra un mensaje de error. En ambos casos (endpoint configurado con éxito, o sin endpoint configurado — modo demo), el usuario pasa directo al dashboard de bienvenida (`UserDashboard.vue`) con datos ficticios, ya que todavía no existe backend real de autenticación. La sesión demo se guarda en `sessionStorage` y se cierra con el botón "Cerrar sesión" o al cerrar la pestaña.
+`src/value-proposition/reference-plans.js` es el catálogo local de referencia, tomado de `server/db.json` del contexto Subscriptions TB1. Conserva sus tres IDs, nombres, importes PEN y ciclo `MONTHLY`; nombres, descripciones y características EN/ES proceden de `subscriptions.plans` del frontend. Al cambiar ese catálogo, actualizar ambos repositorios y comprobar el contrato. No se ofrece un ciclo anual, reportes/PDF ficticios ni acceso comercial activo en estas tarjetas.
+
+Esos roles y la ruta de registro coinciden con el contrato del frontend. Antes de publicar la integración, comprobar que su formulario interpreta `query.role` y preselecciona el segmento sin tratarlo como autorización. Mientras falte la URL o sea inválida, la landing informa que la aplicación no está enlazada; no afirma que un usuario inició sesión.
+
+Los componentes anteriores `AccessDialog.vue` y `UserDashboard.vue` se conservan en el repositorio, pero ya no forman parte del flujo público de acceso. Las variables anteriores de login/registro y documentos legales no controlan ese flujo. Contacto y newsletter mantienen sus endpoints opcionales.
+
+Los documentos locales se abren con `?document=terms&lang=en-US`, `?document=privacy&lang=en-US` y sus versiones `lang=es-419`, bajo la misma base de despliegue. `lang` y la preferencia guardada aceptan también `en`, `es`, `en_US` y `es_419`; el parámetro válido tiene prioridad. Los enlaces de documentos y regreso conservan el idioma canónico. Describen la demo y el comportamiento de esta versión; no son un contrato comercial ni una promesa de backend real.
+
+## Despliegue reproducible
+
+1. Copiar `.env.example` a `.env.local` y completar la URL comprobada del frontend, si ya existe. Las variables Vite se incorporan al compilar; cambiar la URL requiere un nuevo build.
+2. Ejecutar `npm ci` y `npm run build`; publicar **el contenido de `dist/`**, no el código fuente ni el servidor de desarrollo. Conservar el SHA/rama y la URL asignada por el proveedor como evidencia.
+3. Para Vercel o un Static Site de Render en la raíz del dominio, usar `VITE_BASE_PATH=/`, comando de build `npm run build` y directorio de salida `dist`.
+4. El repositorio se renombró a `dataflux-website`. Para su subdirectorio de GitHub Pages, compilar con `VITE_BASE_PATH=/dataflux-website/` o ejecutar `npm run build -- --base=/dataflux-website/`; para un dominio propio en raíz usar `/`. La base debe coincidir con la ruta pública asignada. Publicar `dist` con el flujo Pages autorizado. Esta landing usa anclas y query parameters; sus documentos no requieren una ruta SPA adicional.
+5. Comprobar CSS/JS/imágenes, cambio EN/ES, ambos documentos en ambos idiomas y los dos CTA desde la URL real. No afirmar un despliegue exitoso solo porque el proveedor devuelve `success`.
+
+La configuración del hosting, su cuenta y la publicación corresponden al compañero que realiza el despliegue. La URL pública del frontend continúa pendiente de entrega y comprobación; mientras tanto `VITE_FRONTEND_URL` queda vacío. GitHub Pages no ejecuta la fake API del frontend: ese mock requiere un servicio separado o una modalidad local explícita. Este ajuste permite comprobar de forma reproducible la base del build y los assets bajo el subdirectorio.
 
 ## Estado actual
 
-La landing page ya incluye la estructura visual, textos, traducciones y comportamiento base de la experiencia. Los servicios reales para registro, acceso y suscripción no están conectados todavía. El newsletter y el formulario de contacto muestran mensajes informativos cuando no existe un endpoint válido; el login y el registro, al no depender de una cuenta real, avanzan directo a un dashboard de bienvenida en modo demo.
+La landing mantiene su diseño, textos y secciones. El acceso corresponde a la aplicación separada y depende de su URL configurada; sin ella no se simula una autenticación. El frontend TB1 utiliza una fake API para demostración académica. Newsletter y contacto muestran mensajes informativos cuando no existe un endpoint. No se declara una API propia de producción, un alquiler real o un pago realizado.
 
 ## Diseño y contenido
 
@@ -149,18 +162,20 @@ Los colores principales, la tipografía y la arquitectura de secciones están pe
 
 ## Verificación
 
-Se validó que el proyecto compila correctamente con:
+Las pruebas de comportamiento usan `node:test`, sin nuevas dependencias. Cubren los dos roles y rutas de acceso, subdirectorios, limpieza de query/fragment, rechazo de URL/credenciales/modos inválidos, idioma inicial, aliases, preferencias, links bilingües y almacenamiento no disponible:
 
 ```bash
+node --test src/shared/frontend-links.test.js src/shared/language.test.js src/value-proposition/reference-plans.test.js
 npm run build
+npm run build -- --base=/dataflux-website/
 ```
 
-La UI se ha desarrollado y ajustado para que funcione en distintos anchos de pantalla y con los principales flujos de interacción del landing page.
+Antes de publicar, comprobar con teclado el selector, los avisos y documentos, Escape y retorno de foco al cerrar el diálogo, y el botón del menú móvil. La revisión local comprobó los dos CTA contra el registro de la webapp y su selección del segmento, términos/privacidad EN/ES, Escape/retorno de foco y menú móvil. A 375 × 812 px la landing y el diálogo no desbordaron horizontalmente. Se utilizó una URL local solo en el proceso de prueba, sin publicarla como destino. El coordinador debe repetir los recorridos con la URL pública; una prueba de helper o un build no confirma un despliegue ni la interpretación de `query.role` en la aplicación separada.
 
 ## Repositorio
 
 ```text
-https://github.com/upc-pre-202620-1asi0730-8093-dataflux/dataflux-landing-page
+https://github.com/upc-pre-202620-1asi0730-8093-dataflux/dataflux-website
 ```
 
 Este proyecto está pensado para evolucionar con imágenes reales, videos productivos y servicios de backend en etapas posteriores.
